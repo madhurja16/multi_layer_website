@@ -102,7 +102,7 @@ const galleryImages = [
     { src: "IMAGE/Gallery/14Aug.2023.png", caption: "Caption" },
     { src: "IMAGE/Gallery/29July_2023.png", caption: "Caption" },
     { src: "IMAGE/Gallery/07August_2023.png", caption: "Caption" },
-    { src: "IMAGE/Gallery/21‎September_2023.png", caption: "Caption" },
+    { src: "IMAGE/Gallery/21_‎September_2023.png", caption: "Caption" },
     { src: "IMAGE/Gallery/10Oct_2023.png", caption: "Great vibes, amazing team • Lab dinner • 10/10/23" }
 ];
 
@@ -367,5 +367,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
