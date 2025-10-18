@@ -96,14 +96,14 @@ const newsItems = [
 ];
     
 const galleryImages = [
-    { src: "Aug2_2025.png", caption: "Good food, great company • Soumya’s Farewell Dinner • 02/08/25" },
-    { src: "Oct9_2024.png", caption: "Celebrating teamwork, curiosity, and countless hours at the bench with a well-deserved dinner outing. Oct 2, 2024, was a night to remember for our incredible lab family!" },
-    { src: "13_August ‎2023.png", caption: "Caption" },
-    { src: "14Aug.2023.png", caption: "Caption" },
-    { src: "29July_2023.png", caption: "Caption" },
-    { src: "07August_2023.png", caption: "Caption" },
-    { src: "21‎September_2023.png", caption: "Caption" },
-    { src: "10Oct_2023.png", caption: "Great vibes, amazing team • Lab dinner • 10/10/23" }
+    { src: "IMAGE/Gallery/Aug2_2025.png", caption: "Good food, great company • Soumya’s Farewell Dinner • 02/08/25" },
+    { src: "IMAGE/Gallery/Oct9_2024.png", caption: "Celebrating teamwork, curiosity, and countless hours at the bench with a well-deserved dinner outing. Oct 2, 2024, was a night to remember for our incredible lab family!" },
+    { src: "IMAGE/Gallery/13_August ‎2023.png", caption: "Caption" },
+    { src: "IMAGE/Gallery/14Aug.2023.png", caption: "Caption" },
+    { src: "IMAGE/Gallery/29July_2023.png", caption: "Caption" },
+    { src: "IMAGE/Gallery/07August_2023.png", caption: "Caption" },
+    { src: "IMAGE/Gallery/21‎September_2023.png", caption: "Caption" },
+    { src: "IMAGE/Gallery/10Oct_2023.png", caption: "Great vibes, amazing team • Lab dinner • 10/10/23" }
 ];
 
 
@@ -367,3 +367,4 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
