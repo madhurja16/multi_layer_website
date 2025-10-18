@@ -43,7 +43,7 @@ const teamMembers = [
     { name: "Jogeshwar Chhatria", role: "PhD Student", joiningDate: "July 2022",
       linkedin: "https://www.linkedin.com/in/jogeswar-chhatria-6538362b4/", email: "cy22d017@smail.iiitm.ac.in", imageUrl: "jogesh.jpg" }, 
     { name: "Madhurja Buragohain", role: "PhD Student", joiningDate: "July 2022", linkedin: "https://www.linkedin.com/in/mburagohain/",
-      imageUrl: "madhurja.jpeg", email: "cy22d015@smail.iiitm.ac.in" }, 
+      imageUrl: "IMAGE/PROFILE/madhurja.jpeg", email: "cy22d015@smail.iiitm.ac.in" }, 
     { name: "Sudhin Rathnakumaran", role: "PhD Student", joiningDate: "July 2023",
       linkedin: "https://www.linkedin.com/in/sudhin-r/", email: "cy23d024@smail.iitm.ac.in", imageUrl: "sudhin.jpg"}, 
     { name: "Athira Jayasankar", role: "PhD Student", joiningDate: "July 2024",
@@ -367,4 +367,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
