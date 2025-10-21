@@ -64,7 +64,7 @@ const postdocAlumni = [
 ];
 
 const mscAlumni = [
-    { name: "XXXXX XXXXX", role: "Data Scientist at Google", where: "MSc, 2022" },
+    { name: "XXXXX XXXXX", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
 ];
 
 
@@ -367,6 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
 
