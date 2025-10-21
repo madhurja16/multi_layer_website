@@ -28,11 +28,15 @@ const postdocAlumni = [
 ];
 
 const mscAlumni = [
-    { name: "Soumya U K", role: "Phd at  TCG Crest, Kolkata", where: "MSc, 2023" },
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
+    { name: "Stuti Gupta", role: "Continewing PhD at CCIC", where: "MSc, 2023" },
+    { name: "Amiya Paul", role: "PhD at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
+];
+
+const internAlumni = [
+    { name: "Soumya U K", role: "PhD at  TCG Crest, Kolkata", where: "MSc, 2023" },
+    { name: "Nikitha S", role: "PhD at Ghent University, Belgium", where: "MSc, 2022" },
     { name: "Muskan", role: "Works at Pharma", where: "MSc, 2023" },
-    { name: "Nikitha S", role: "Phd at Ghent University, Belgium", where: "MSc, 2022" },
-    { name: "Sankari NS", role: "Phd at  IIT Madras", where: "MSc, 2022" }
+    { name: "Sankari NS", role: "PhD at  IIT Madras", where: "MSc, 2022" }
 ];
 
 
@@ -260,6 +264,7 @@ document.addEventListener('DOMContentLoaded', function() {
     renderTeam(teamMembers, 'team-members-list'); 
     renderTeam(postdocAlumni, 'team-alumni-postdoc-list'); 
     renderTeam(mscAlumni, 'team-alumni-msc-list'); 
+    renderTeam(internAlumni, 'team-alumni-intern-list');
     renderNews();
     renderGallery();
 
@@ -355,10 +360,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-
-
-
-
-
-
