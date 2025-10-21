@@ -3,485 +3,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team | Computational Catalysis and Interfacial Chemistry | IIT Madras</title>
+    <title>Home | Computational Catalysis and Interfacial Chemistry | IIT Madras</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
     <link rel="stylesheet" href="style.css"> <!-- Linked common styles -->
+    <style>
+        /* Keyframes for the image slideshow on the index page */
+        @keyframes fadeEffect {
+            0% { opacity: 0; transform: scale(1.05); }
+            5% { opacity: 1; transform: scale(1); }
+            20% { opacity: 1; transform: scale(1); }
+            25% { opacity: 0; transform: scale(1.05); }
+            100% { opacity: 0; }
+        }
+
+        .slideshow-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            animation-name: fadeEffect;
+            animation-duration: 30s; /* 5s per image * 6 images */
+            animation-iteration-count: infinite;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        /* Apply staggered animation delays */
+        .slideshow-image:nth-child(1) { animation-delay: 0s; }
+        .slideshow-image:nth-child(2) { animation-delay: 5s; }
+        .slideshow-image:nth-child(3) { animation-delay: 10s; }
+        .slideshow-image:nth-child(4) { animation-delay: 15s; }
+        .slideshow-image:nth-child(5) { animation-delay: 20s; }
+        .slideshow-image:nth-child(6) { animation-delay: 25s; }
+          
+        /* Style for active navigation link */
+        .nav-link.active {
+            color: #2563EB; /* blue-600 */
+            font-weight: 600;
+            /* Visual indicator that the link is active on the current page */
+            border-bottom: 2px solid #2563EB; 
+            padding-bottom: 2px;
+        }
+
+        /* Styles for Photo Gallery Modal */
+        #gallery-modal.hidden {
+            display: none;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .section {
+            scroll-margin-top: 80px; /* Adjust for fixed header height */
+        }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800" style="font-family: 'Inter', sans-serif;">
+<body class="bg-gray-50 text-gray-800">
 
     <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
                     <img src="IMAGE/LOGO/CCIC_logo.png" alt="CCIC Logo" class="h-12 w-auto rounded-md object-cover">
-                    <a href="index.html" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
+                    <a href="index.html" target="_blank" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
                 </div>
-                <nav class="hidden md:flex items-center space-x-8" data-current-page="team">
-                    <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
-                    <a href="research.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Research</a>
-                    <a href="team.html" class="nav-link text-blue-600 font-semibold transition-colors border-b-2 border-blue-600 pb-1">Team</a>
-                    <a href="publications.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Publications</a>
-                    <a href="news.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">News</a>
-                    <a href="gallery.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Gallery</a>
-                    <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold shadow-md">Join Us</a>
+                <nav class="hidden md:flex items-center space-x-8" data-current-page="home">
+                    <!-- Nav links now point to separate files/sections and open in a new window -->
+                    <a href="index.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="research.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Research</a>
+                    <a href="team.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Team</a>
+                    <a href="publications.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Publications</a>
+                    <a href="news.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">News</a>
+                    <a href="gallery.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Gallery</a>
+                    <a href="contact.html" target="_blank" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold">Join Us</a>
                 </nav>
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-100">
+                <button id="mobile-menu-btn" class="md:hidden">
                     <i data-feather="menu"></i>
                 </button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Home</a>
-            <a href="research.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Research</a>
-            <a href="team.html" class="block py-3 px-6 text-blue-600 font-semibold bg-gray-50 mobile-link">Team</a>
-            <a href="publications.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Publications</a>
-            <a href="news.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">News</a>
-            <a href="gallery.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Gallery</a>
-            <a href="contact.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Join Us</a>
+            <a href="index.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Home</a>
+            <a href="research.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Research</a>
+            <a href="team.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Team</a>
+            <a href="publications.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Publications</a>
+            <a href="news.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">News</a>
+            <a href="gallery.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Gallery</a>
+            <a href="contact.html" target="_blank" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Join Us</a>
         </div>
     </header>
 
-    <main class="pt-20">
-        <!-- TEAM Section -->
-        <section id="team" class="section bg-white py-20">
+    <main>
+        <!-- HOME Section (Full Screen Hero) -->
+        <section id="home" class="section relative min-h-screen flex items-center justify-center text-white overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full z-0">
+                <div class="slideshow-container">
+                    <!-- Placeholder images (replace with actual files if available) -->
+                    <img src="IMAGE/Slideshow/SlideShow_ANJANA.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Abstract+Model+1';" alt="Abstract molecular structure" class="slideshow-image">
+                    <img src="IMAGE/Slideshow/SlideShow_MADHURJA.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Chemical+Lab';" alt="Chemical lab equipment" class="slideshow-image">
+                    <img src="IMAGE/Slideshow/SlideShow_JOGESH.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Scientist+Working';" alt="Scientist working in a lab" class="slideshow-image">
+                    <img src="IMAGE/Slideshow/SlideShow_SUDHIN.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Graphene+Structure';" alt="Graphene structure visualization" class="slideshow-image">
+                    <img src="IMAGE/Slideshow/SlideShow_STUTI.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=3D+Molecular+Model';" alt="3D molecular model" class="slideshow-image">
+                    <img src="IMAGE/Slideshow/SlideShow_ATHIRA.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Scientific+Equipment';" alt="Advanced scientific equipment" class="slideshow-image">
+                </div>
+                <div class="absolute inset-0 bg-black/60"></div>
+            </div>
+            
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center relative z-10">
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight">Computational Catalysis and Interfacial Chemistry (CCIC)</h1>
+                <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl mx-auto">Leveraging high-performance computing to unravel complex chemical processes at interfaces and design next-generation catalysts.</p>
+                <div class="mt-10">
+                    <a href="research.html" target="_blank" class="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-700 transition-all shadow-lg hover:shadow-xl">Explore Our Work</a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- INTRO/Welcome Section -->
+        <section class="section bg-white py-20">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Welcome to CCIC Lab at IIT Madras </h2>
+                <!-- ADDED text-justify CLASS HERE -->
+                <p class="text-lg text-gray-700 leading-relaxed text-justify">Welcome to the Computational Catalysis and Interfacial Chemistry (CCIC) research group led by Dr. Sooraj Kunnikuruvan.
+                    Our group focuses on understanding and designing catalytic and interfacial processes through advanced computational techniques.
+                    We investigate a wide range of chemical reactions-both homogeneous and heterogeneous-that occur at various interfaces,
+                    with applications in sustainable fuel production,
+                    energy storage systems such as batteries, and broader energy conversion technologies.
+                    Our research combines first-principles methods like density functional theory (DFT), ab initio molecular dynamics (AIMD),
+                    and classical molecular dynamics (CMD) to uncover mechanistic insights and guide experimental efforts.
+                    We also integrate machine learning (ML) and data-driven approaches to accelerate
+                    the discovery and optimization of catalytic materials and interfacial chemistries.
+                    Through this multidisciplinary approach, we aim to address fundamental challenges
+                    in energy sustainability and contribute to the development of next-generation catalytic and energy storage technologies.</p>
+                <div class="mt-10">
+                    <a href="team.html" target="_blank" class="text-blue-600 font-semibold hover:text-blue-700 flex items-center justify-center space-x-2">
+                        <span>Meet Our Students and Alumni</span>
+                        <i data-feather="arrow-right" class="w-5 h-5"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PRINCIPAL INVESTIGATOR Section (Updated with Stylish Cards) -->
+        <section class="section bg-gray-50 py-16">
             <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Meet the Team</h1>
-                    <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Our group is composed of dedicated researchers and students passionate about advancing computational chemistry.</p>
-                </div>
-                
-                <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-center mb-10 text-gray-800 border-b pb-4">Principal Investigator</h3>
-                    <!-- PI Card -->
-                    <div class="max-w-xl mx-auto bg-white rounded-xl p-8 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-blue-500">
-                        <img src="IMAGE/PROFILE/soorajK.jpg" onerror="this.onerror=null;this.src='https://placehold.co/128x128/666/fff?text=SK';" alt="Dr. Sooraj Kunnikuruvan" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0">
-                        <div class="text-center sm:text-left">
-                            <h4 class="text-2xl font-bold text-gray-900">Dr. Sooraj Kunnikuruvan</h4>
-                            <p class="text-blue-600 font-medium">Principal Investigator, Assistant Professor</p>
-                            <div class="flex justify-center sm:justify-start items-center space-x-4 mt-3">
-                                <a href="https://www.linkedin.com/in/sooraj-kunnikuruvan-940657268/" class="text-gray-500 hover:text-blue-700 transition-colors">
-                                    <i data-feather="linkedin" class="w-5 h-5"></i>
-                                </a>
-                                <a href="mailto:soorajk@iitm.ac.in" class="text-gray-500 hover:text-blue-700 transition-colors">
-                                    <i data-feather="mail" class="w-5 h-5"></i>
-                                </a>
-                            </div>
-                            <p class="text-gray-600 mt-3 text-sm italic">Research focuses on chemical reactions at interfaces, energy storage, catalysis, and renewable energy production, employing DFT and ab initio molecular dynamics.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-center mb-10 text-gray-800 border-b pb-4">Current Researchers & Students</h3>
-                    <div id="team-members-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
-                        <!-- Dynamic team member cards will be rendered here -->
-                    </div>
-                </div>
-                
-                <div class="bg-gray-100 p-8 rounded-xl shadow-inner">
-                    <h3 class="text-2xl font-bold text-center mb-10 text-gray-800 border-b pb-4">Alumni</h3>
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Principal Investigator</h2>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                     
-                    <div class="mb-12">
-                        <h4 class="text-xl font-semibold text-center text-gray-700 mb-6">Postdocs & PhD Graduates</h4>
-                        <div id="team-alumni-postdoc-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
-                            <!-- Dynamic postdoc alumni cards will be rendered here -->
+                    <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
+                        <!-- PI Photo (Medium Size) -->
+                        <div class="flex-shrink-0">
+                            <!-- Placeholder: Update the src attribute with the actual path to the PI's photo -->
+                            <img src="IMAGE/PROFILE/soorajK.jpg" 
+                                 onerror="this.onerror=null;this.src='https://placehold.co/160x160/2563EB/fff?text=PI+Photo';" 
+                                 alt="Dr. Sooraj Kunnikuruvan" 
+                                 class="w-40 h-40 object-cover rounded-full border-4 border-blue-600 shadow-md mx-auto md:mx-0">
+                        </div>
+
+                        <!-- PI Info (Name/Title) -->
+                        <div class="flex-grow text-center md:text-left">
+                            <h3 class="text-3xl font-bold text-gray-900">Dr. Sooraj Kunnikuruvan</h3>
+                            <p class="text-lg text-blue-600 mb-6">Assistant Professor, Department of Chemical Engineering</p>
                         </div>
                     </div>
-                    <div>
-                        <h4 class="text-xl font-semibold text-center text-gray-700 mb-6">MSc Graduates</h4>
-                        <div id="team-alumni-msc-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
-                            <!-- Dynamic MSc alumni cards will be rendered here -->
+                    
+                    <!-- NEW: Three stylish contact cards -->
+                    <h4 class="text-2xl font-bold text-center text-gray-900 mt-8 mb-6 border-t pt-6">Principal Investigator Contact</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        
+                        <!-- 1. Email Card (Blue) -->
+                        <div class="bg-blue-50/70 p-4 rounded-xl border-2 border-blue-200 shadow-md hover:shadow-lg hover:shadow-blue-200 transition-shadow duration-300 flex flex-col items-center space-y-2">
+                            <i data-feather="mail" class="w-8 h-8 text-blue-600"></i>
+                            <span class="text-sm font-semibold text-gray-600">Email Address</span>
+                            <a href="mailto:soorajk@iitm.ac.in" class="text-blue-800 font-bold text-lg truncate hover:text-blue-900 transition-colors">soorajk@iitm.ac.in</a>
+                        </div>
+
+                        <!-- 2. Phone Card (Green) -->
+                        <div class="bg-green-50/70 p-4 rounded-xl border-2 border-green-200 shadow-md hover:shadow-lg hover:shadow-green-200 transition-shadow duration-300 flex flex-col items-center space-y-2">
+                            <i data-feather="phone" class="w-8 h-8 text-green-600"></i>
+                            <span class="text-sm font-semibold text-gray-600">Phone</span>
+                            <span class="text-green-800 font-bold text-lg">+91-44-2257-4245</span>
+                        </div>
+
+                        <!-- 3. Location Card (Slate/Gray) - Replaced CV -->
+                        <div class="bg-slate-50/70 p-4 rounded-xl border-2 border-slate-200 shadow-md hover:shadow-lg hover:shadow-slate-200 transition-shadow duration-300 flex flex-col items-center space-y-2">
+                            <i data-feather="map-pin" class="w-8 h-8 text-slate-600"></i>
+                            <span class="text-sm font-semibold text-gray-600">Lab Location</span>
+                            <!-- Placeholder Google Maps link for IIT Madras -->
+                            <a href="https://www.google.com/maps/place/Department+of+Chemistry/@12.9881348,80.2324006,21z/data=!4m10!1m2!2m1!1schemistry+department+iit+madras!3m6!1s0x3a525d8020b71665:0x94cb18c14f82268c!8m2!3d12.9881261!4d80.2325725!15sCh9jaGVtaXN0cnkgZGVwYXJ0bWVudCBpaXQgbWFkcmFzkgEVdW5pdmVyc2l0eV9kZXBhcnRtZW50qgFTCgkvbS8wZ3l4d2QQATIfEAEiG7adv6xgP-jLWrkfNa6NEFSJ2mxAhOLdItjFLjIjEAIiH2NoZW1pc3RyeSBkZXBhcnRtZW50IGlpdCBtYWRyYXPgAQA!16s%2Fg%2F1hm3vdcwb?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-slate-800 font-bold text-lg hover:text-slate-900 transition-colors">View on Google Maps</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Gallery Modal (Included for consistent script linking) -->
-        <div id="gallery-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
-            <div class="bg-white rounded-lg max-w-4xl max-h-full w-full h-auto p-4 relative">
-                <button id="modal-close-btn" class="absolute -top-4 -right-4 bg-white rounded-full p-2 z-10 shadow-lg hover:bg-gray-100 transition-colors">
-                    <i data-feather="x" class="text-gray-800"></i>
-                </button>
-                <img id="modal-image" src="" alt="Gallery image" class="w-full h-auto max-h-[80vh] object-contain rounded-md">
-                <p id="modal-caption" class="text-center text-gray-700 mt-4"></p>
-            </div>
-        </div>
-
+        
     </main>
 
     <footer class="bg-gray-800 text-gray-300 py-8">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; <span id="current-year"></span> Computational Catalysis and Interfacial Chemistry (CCIC). All Rights Reserved.</p>
-            <p class="text-sm mt-2">Affiliated with the <a href="https://www.iitm.ac.in/" class="text-blue-400 hover:underline">Indian Institute of Technology Madras</a></p>
+            <p class="text-sm mt-2">Affiliated with the <a href="https://www.iitm.ac.in/" target="_blank" class="text-blue-400 hover:underline">Indian Institute of Technology Madras</a></p>
         </div>
     </footer>
 
-    <!-- EMBEDDED JAVASCRIPT: Includes data and rendering logic with fixes -->
-    <script type="text/javascript">
-// script.js (Embedded content for full functionality)
-
-// --- DATA ---
-// NOTE: Publications, News, and Gallery data are present here but are only used on their respective pages (not team.html).
-const publications = [
-    { title: "Unraveling B, N Co-doping synergy in graphitic carbon nitride for efficient CO2 cycloaddition with styrene oxide",
-      authors: "Hafila S Khairun, Gazala Parveen, Ripsa Rani Nayak, Jogeswar Chhatria, Sooraj Kunnikuruvan, Navneet Kumar Gupta", 
-      journal: "Journal of Catalysis",
-      year: "2025", 
-      link: "https://doi.org/10.1016/j.jcat.2025.116399" },
-    { title: "A Review on the Applications of “Catalysis Under 2D-Cover” for Small Molecule Activation",
-      authors: "Athira Jayasankar, Sooraj Kunnikuruvan",
-      journal: "Journal of the Indian Institute of Science",
-      year: "2025",
-      link: "https://doi.org/10.1007/s41745-025-00481-9" },
-    { title: "Molecular Mechanisms of Polymer Crosslinking via Thermal Activation",
-      authors: "Javed Akhtar, Jogeswar Chhatria, Sooraj Kunnikuruvan, Satyesh K Yadav, Tarak K Patra",
-      journal: "arXiv preprint arXiv:2507.21143", 
-      year: "2024", 
-      link: "https://arxiv.org/pdf/2507.21143" },
-    { title: "Orchestrating Multiple Aryl Rearrangements: Deciphering the Dynamics of Competitive Shifts and Shuttles on Four Carbons",
-      authors: "Nagaraju Ponugoti, Jogeswar Chhatria, Sooraj Kunnikuruvan, Parthasarathy Venkatakrishnan",
-      journal: "The Journal of Organic Chemistry",
-      year: "2025",
-      link: "https://doi.org/10.1021/acs.joc.5c00596" },
-    { title: "Machine Learning-accelerated Screening of Bimetallic Alloys for Oxygen Evolution Reaction",
-      authors: "Kumar, R., Sharma, A., Kunnikuruvan, S.",
-      journal: "Journal of Physical Chemistry Letters",
-      year: "2024",
-      link: "#" },
-    { title: "Self‐Healing, Ga‐Sb Alloy Confined Sn Anode for Stable Na‐Ion Storage in Glyme Based Electrolytes",
-      authors: "Dimpal Deori, Madhurja Buragohain, Youhyun Son, Sooraj Kunnikuruvan, Ashok Kumar Nanjundan, Philipp Adelhelm, Thangavelu Palaniselvam",
-      journal: "Small",
-      year: "2025",
-      link: "https://doi.org/10.1002/smll.202504185" },
-    { title: "Electrochemical Nitrate Reduction to Ammonia using γ-Fe2O3/BCN in a Neutral Medium",
-      authors: "Soniya Mariya Varghese, Anju Vakakuzhiyil Gopinathan, Sudhin Rathnakumaran, Suraj Sasikumar, Sooraj Kunnikuruvan, Ranga Rao Gangavarapu",
-      journal: "ACS Catalysis",
-      year: "2025",
-      link: "https://doi.org/10.1021/acscatal.5c00936" }
-];
-
-const teamMembers = [
-    { name: "Jogeswar Chhatria", role: "PhD Student", joiningDate: "July 2022",
-      linkedin: "https://www.linkedin.com/in/jogeswar-chhatria-6538362b4/", email: "cy22d017@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/jogesh.jpg" }, 
-    { name: "Madhurja Buragohain", role: "PhD Student", joiningDate: "July 2022", linkedin: "https://www.linkedin.com/in/mburagohain/",
-      imageUrl: "IMAGE/PROFILE/madhurja.jpg", email: "cy22d015@smail.iiitm.ac.in" }, 
-    { name: "Sudhin R", role: "PhD Student", joiningDate: "July 2023",
-      linkedin: "https://www.linkedin.com/in/sudhin-r/", email: "cy23d024@smail.iitm.ac.in", imageUrl: "IMAGE/PROFILE/sudhin.jpg"}, 
-    { name: "Athira J", role: "PhD Student", joiningDate: "July 2024",
-      linkedin: "https://www.linkedin.com/in/athira-jayasankar-867b46214/", email: "cy24d300@smail.iitm.ac.in", imageUrl: "IMAGE/PROFILE/athira.jpg"}, 
-    { name: "Anjana Vijayan", role: "PhD Student", joiningDate: "July 2025",
-      linkedin: "#", email: "cy25d037@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/anjana.jpg"}, 
-    { name: "Stuti Gupta", role: "Project Student", joiningDate: "July 2025",
-      linkedin: "https://www.linkedin.com/in/stuti-gupta-24285b215/", email: "guptastuti012@gmail.com", imageUrl: "IMAGE/PROFILE/stuti.jpg"}, 
-    { name: "Ankan Kamila", role: "Masters Student", joiningDate: "July 2025",
-      linkedin: "#", email: "cy24c013@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/ankan.jpg"}, 
-    { name: "Himadri Mittal", role: "Masters Student", joiningDate: "July 2025",
-      linkedin: "#", email: "cy24c033@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/himadri.jpg"}
-];
-
-const postdocAlumni = [
-    { name: "Dr. Pragin", role: "Works at TCS", where: "Post-doc (January 2024 - October 2024 )" }, 
-    { name: "Dr. Maiyelvaganan ", role: "Postdoctoral Researcher", where: "Post-doc (October2024 - October 2025)" } 
-];
-
-// FIX: Removed the duplicate entry for Amiya Paul.
-const mscAlumni = [
-    { name: "Soumya U K", role: "Phd at  TCG Crest, Kolkata", where: "MSc, 2023" },
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
-    { name: "Muskan", role: "Works at Pharma", where: "MSc, 2023" },
-    { name: "Nikitha S", role: "Phd at Ghent University, Belgium", where: "MSc, 2022" },
-    { name: "Sankari NS", role: "Phd at  IIT Madras", where: "MSc, 2022" }
-];
-
-
-const newsItems = [
-    { title: "Madhurja’s Latest Paper Publication",
-      date: "October 16, 2025",
-      excerpt: "We're happy to share our new article on solid electrolyte interphase (SEI) formation in Li metal batteries, published in ACS Applied Energy Materials.", 
-      imageUrl: "https://placehold.co/400x250/3B82F6/FFFFFF?text=New Paper Published" },
-    { title: "Mr. Madhurja recieves best oral presentation award",
-      date: "Sepetember 8, 2025",
-      excerpt: " We are proud to share that Madhurjya Buragohain received the Best Oral Presentation Award at the Chemistry In-House Symposium (CiHS)-2025...", 
-      imageUrl: "https://placehold.co/400x250/3B82F6/FFFFFF?text= Best Oral Presentation Award" },
-    { title: "Mr. Sudhin R recieves best poster award",
-      date: "August 28, 2025",
-      excerpt: "We are delighted to share that Sudhin R. from our CCIC lab has been awarded the Best Poster Award at the National Symposium on Electrochemical Science and Technology (NSEST-2025)...", 
-      imageUrl: "https://placehold.co/400x250/3B82F6/FFFFFF?text=Best Poster Award" },
-    { title: "CCIC welcomes new PhD students",
-      date: "August 1, 2025", 
-      excerpt: "We are excited to welcome Anjana Vijayan to the lab. She will be working on solid-electrolyte.", 
-      imageUrl: "https://placehold.co/400x250/10B981/FFFFFF?text=Welcome" },
-    { title: "Ms. Stuti awarded the prestigious Prof. V. Ramamurthy Endowment Award for Best MSc Thesis.",
-      date: "August 17, 2025", 
-      excerpt: "We’re delighted to share that STUTI GUPTA, an MSc student from our lab, has officially graduated...", 
-      imageUrl: "https://placehold.co/600x375/10B981/FFFFFF?text=Prof. V. Ramamurthy Endowment Award&font_size=80" },
-    { title: "Mr. Jogesh recieves best poster award",
-      date: "November 6, 2024", 
-      excerpt: "A big congratulations to our lab member Jogeswar Chhatria, who has been awarded the Best Poster in Theoretical Chemistry at the Chemistry In-House Symposium 2024...", 
-      imageUrl: "https://placehold.co/400x250/F59E0B/FFFFFF?text=Best Poster Award" }
-];
+    <!-- Gallery Modal (Included for consistent script linking) -->
+    <div id="gallery-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
+        <div class="bg-white rounded-lg max-w-4xl max-h-full w-full h-auto p-4 relative">
+            <button id="modal-close-btn" class="absolute -top-4 -right-4 bg-white rounded-full p-2 z-10">
+                <i data-feather="x" class="text-gray-800"></i>
+            </button>
+            <img id="modal-image" src="" alt="Gallery image" class="w-full h-auto max-h-[80vh] object-contain rounded-md">
+            <p id="modal-caption" class="text-center text-gray-700 mt-4"></p>
+        </div>
+    </div>
     
-const galleryImages = [
-    { src: "Aug2_2025.png", caption: "Good food, great company • Soumya’s Farewell Dinner • 02/08/25" },
-    { src: "Oct9_2024.png", caption: "Celebrating teamwork, curiosity, and countless hours at the bench with a well-deserved dinner outing. Oct 2, 2024, was a night to remember for our incredible lab family!" },
-    { src: "13_August ‎2023.png", caption: "Caption" },
-    { src: "14Aug.2023.png", caption: "Caption" },
-    { src: "29July_2023.png", caption: "Caption" },
-    { src: "07August_2023.png", caption: "Caption" },
-    { src: "21‎September_2023.png", caption: "Caption" },
-    { src: "10Oct_2023.png", caption: "Great vibes, amazing team • Lab dinner • 10/10/23" }
-];
+    <script src="script.js"></script>
+    <script>
+        // Specific script for index.html to highlight the current page
+        document.addEventListener('DOMContentLoaded', () => {
+             const nav = document.querySelector('nav[data-current-page="home"]');
+             nav.querySelector('a[href="index.html"]').classList.add('active');
+             
+             // Initialize feather icons for the new section
+             feather.replace();
 
+             // Set current year in footer
+             document.getElementById('current-year').textContent = new Date().getFullYear();
+             
+             // Mobile menu toggle logic
+             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+             const mobileMenu = document.getElementById('mobile-menu');
+             const menuIcon = mobileMenuBtn.querySelector('i');
 
-// --- DYNAMIC CONTENT RENDERING FUNCTIONS (only run if the element exists) ---
-// (Functions for publications, news, gallery retained for completeness, though not used on this page)
+             mobileMenuBtn.addEventListener('click', () => {
+                 const isHidden = mobileMenu.classList.toggle('hidden');
+                 menuIcon.setAttribute('data-feather', isHidden ? 'menu' : 'x');
+                 feather.replace();
+             });
 
-function renderPublications(limit) {
-    const list = document.getElementById('publications-list');
-    if (!list) return;
-
-    list.innerHTML = ''; 
-    const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
-    const itemsToShow = limit ? sortedPublications.slice(0, limit) : sortedPublications;
-    const groupedByYear = itemsToShow.reduce((acc, p) => {
-        if (!acc[p.year]) {
-            acc[p.year] = [];
-        }
-        acc[p.year].push(p);
-        return acc;
-    }, {});
-    const sortedYears = Object.keys(groupedByYear).sort((a, b) => b - a);
-
-    sortedYears.forEach(year => {
-        const yearSection = document.createElement('div');
-        yearSection.className = 'flex flex-col md:flex-row gap-4 md:gap-8';
-        const yearColumn = `
-            <div class="md:w-1/12 flex-shrink-0">
-                <h3 class="text-2xl font-bold text-gray-800 md:sticky md:top-24">${year}</h3>
-            </div>`;
-
-        const pubsColumn = document.createElement('div');
-        pubsColumn.className = 'md:w-11/12 space-y-6';
-
-        groupedByYear[year].forEach(p => {
-            const item = document.createElement('div');
-            item.className = 'bg-white p-6 rounded-lg shadow-sm border border-gray-200 transition-shadow duration-300 hover:shadow-lg';
-            item.innerHTML = `
-                <p class="font-bold text-lg text-gray-900">${p.title}</p>
-                <p class="text-gray-600 mt-1 text-sm">${p.authors}</p>
-                <p class="text-sm text-gray-500 mt-2"><em>${p.journal}</em>, ${p.year}</p>
-                ${p.link && p.link !== '#' ? `
-                <a href="${p.link}" class="inline-block mt-3 text-blue-600 font-semibold text-sm hover:underline">
-                    Read Paper <span class="font-sans">&rarr;</span>
-                </a>` : ''}
-            `;
-            pubsColumn.appendChild(item);
+             // Simple slideshow logic (if script.js is not present)
+             let slideIndex = 0;
+             function showSlides() {
+                 let slides = document.getElementsByClassName("slideshow-image");
+                 for (let i = 0; i < slides.length; i++) {
+                     // Note: We are relying on CSS animations for smooth transitions, but keeping this function for basic visibility if needed.
+                     // The CSS animation handles the fading and staggering perfectly.
+                 }
+             }
+             showSlides();
         });
-        
-        yearSection.innerHTML = yearColumn;
-        yearSection.appendChild(pubsColumn);
-        list.appendChild(yearSection);
-    });
-}
-    
-function renderTeam(members, containerId) {
-    const list = document.getElementById(containerId);
-    if (!list) return;
 
-    list.innerHTML = '';
-    members.forEach(member => {
-        const card = document.createElement('div');
-        card.className = 'text-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300';
-        const initials = member.name.split(' ').map(n => n[0]).join('');
-        const imageUrl = member.imageUrl || `https://placehold.co/200x200/EBF4FF/3B82F6?text=${initials}`;
-        
-        let description = `<p class="text-blue-600 font-medium">${member.role}</p>`;
-        if (member.joiningDate) {
-            description += `<p class="text-gray-500 text-sm mt-1">Joined: ${member.joiningDate}</p>`;
-        }
-        if (member.where) {
-            description += `<p class="text-gray-500 text-sm mt-1">${member.where}</p>`;
-        }
-
-        // IMPROVEMENT: Render social links if EITHER linkedin or email exists
-        let socialLinks = '';
-        if (member.linkedin || member.email) {
-            socialLinks = `<div class="flex justify-center space-x-3 mt-3">`;
-            
-            // Render LinkedIn if link is provided and is not the '#' placeholder
-            if (member.linkedin && member.linkedin !== '#') { 
-                socialLinks += `
-                    <a href="${member.linkedin}" class="text-gray-400 hover:text-blue-600 transition-colors">
-                        <i data-feather="linkedin" class="w-5 h-5"></i>
-                    </a>`;
-            }
-            // Render Email if provided
-            if (member.email) {
-                socialLinks += `
-                    <a href="mailto:${member.email}" class="text-gray-400 hover:text-blue-600 transition-colors">
-                        <i data-feather="mail" class="w-5 h-5"></i>
-                    </a>`;
-            }
-            socialLinks += `</div>`;
-        }
-
-
-        card.innerHTML = `
-            <img src="${imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/200x200/EBF4FF/3B82F6?text=${initials}';" alt="${member.name}" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-xl border-4 border-white">
-            <h4 class="font-bold text-lg text-gray-900">${member.name}</h4>
-            ${description}
-            ${socialLinks}
-        `;
-        list.appendChild(card);
-    });
-    feather.replace(); 
-}
-
-function renderNews() {
-    const list = document.getElementById('news-list');
-    if (!list) return;
-
-    list.innerHTML = '';
-    newsItems.forEach(item => {
-        const card = document.createElement('div');
-        card.className = 'bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300';
-        card.innerHTML = `
-            <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-48 object-cover">
-            <div class="p-6">
-                <p class="text-sm text-gray-500 mb-2">${item.date}</p>
-                <h3 class="font-bold text-lg mb-3">${item.title}</h3>
-                <p class="text-gray-600 text-sm">${item.excerpt}</p>
-            </div>
-        `;
-        list.appendChild(card);
-    });
-}
-    
-function renderGallery() {
-    const grid = document.getElementById('gallery-grid');
-    if (!grid) return;
-
-    const modal = document.getElementById('gallery-modal');
-    const modalImg = document.getElementById('modal-image');
-    const modalCaption = document.getElementById('modal-caption');
-    const closeBtn = document.getElementById('modal-close-btn');
-
-    grid.innerHTML = '';
-    galleryImages.forEach(img => {
-        const item = document.createElement('div');
-        item.className = 'aspect-w-1 aspect-h-1 cursor-pointer overflow-hidden rounded-lg group';
-        item.innerHTML = `<img src="${img.src}" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F59E0B/FFFFFF?text=Photo+Missing';" alt="${img.caption}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">`;
-        
-        item.addEventListener('click', () => {
-            modalImg.src = img.src;
-            modalImg.onerror = () => modalImg.src = 'https://placehold.co/600x400/F59E0B/FFFFFF?text=Image+Not+Found'; 
-            modalCaption.textContent = img.caption;
-            modal.classList.remove('hidden');
+        // Basic placeholder for script.js functionality (since it was referenced)
+        // Set current year in footer
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
-        grid.appendChild(item);
-    });
-
-    if (modal && closeBtn) {
-        closeBtn.addEventListener('click', () => modal.classList.add('hidden'));
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.classList.add('hidden');
-            }
-        });
-    }
-    feather.replace();
-}
-
-/**
- * Global function to remove the target="_blank" attribute from all links.
- */
-function fixNavigationLinks() {
-    document.querySelectorAll('a[target="_blank"]').forEach(link => {
-        link.removeAttribute('target');
-    });
-}
-
-
-// --- GLOBAL INITIALIZATION AND EVENT LISTENERS ---
-
-document.addEventListener('DOMContentLoaded', function() {
-    // --- Data Rendering (Only works if the container IDs exist on the page) ---
-    renderPublications(4); // Only renders if publications-list is present
-    renderTeam(teamMembers, 'team-members-list'); 
-    renderTeam(postdocAlumni, 'team-alumni-postdoc-list'); 
-    renderTeam(mscAlumni, 'team-alumni-msc-list'); 
-    renderNews(); // Only renders if news-list is present
-    renderGallery(); // Only renders if gallery-grid is present
-
-    // --- Global Setup ---
-    
-    // Safety check: ensure no links open in new window
-    fixNavigationLinks();
-
-    // Set current year in footer
-    const currentYearEl = document.getElementById('current-year');
-    if (currentYearEl) {
-        currentYearEl.textContent = new Date().getFullYear();
-    }
-    
-    feather.replace();
-
-    // PI image fallback (redundant after HTML fix, but useful if other PI images are added)
-    document.querySelector('img[alt="Dr. Sooraj Kunnikuruvan"]').onerror = function() {
-        this.onerror = null;
-        this.src = 'https://placehold.co/128x128/666/fff?text=SK';
-    };
-
-    // Mobile menu toggle
-    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-
-    mobileMenuBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.toggle('hidden');
-        const icon = mobileMenuBtn.querySelector('i');
-        if (mobileMenu?.classList.contains('hidden')) {
-            icon.setAttribute('data-feather', 'menu');
-        } else {
-            icon.setAttribute('data-feather', 'x');
-        }
-        feather.replace();
-    });
-    
-    // Close mobile menu on link click
-    document.querySelectorAll('.mobile-link').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu?.classList.add('hidden');
-            document.getElementById('mobile-menu-btn').querySelector('i').setAttribute('data-feather', 'menu');
-            feather.replace();
-        });
-    });
-
-    // Header shrink on scroll
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('py-2');
-            header.classList.remove('py-4');
-        } else {
-            header.classList.add('py-4');
-            header.classList.remove('py-2');
-        }
-    });
-});
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
