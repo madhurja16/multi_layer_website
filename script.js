@@ -64,8 +64,8 @@ const postdocAlumni = [
 ];
 
 const mscAlumni = [
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" }
+    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
+    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" }
 ];
 
 
@@ -153,10 +153,12 @@ function renderPublications(limit) {
                 <p class="text-gray-600 mt-1 text-sm">${p.authors}</p>
                 <p class="text-sm text-gray-500 mt-2"><em>${p.journal}</em>, ${p.year}</p>
                 ${p.link && p.link !== '#' ? `
-                <a href="${p.link}" target="_blank" class="inline-block mt-3 text-blue-600 font-semibold text-sm hover:underline">
+                <a href="${p.link}" class="inline-block mt-3 text-blue-600 font-semibold text-sm hover:underline">
                     Read Paper <span class="font-sans">&rarr;</span>
                 </a>` : ''}
             `;
+            // NOTE: Removed target="_blank" from the publication link to match the user's request.
+            // For external links, target="_blank" is generally preferred, but we adhere to the fix requested.
             pubsColumn.appendChild(item);
         });
         
@@ -187,9 +189,10 @@ function renderTeam(members, containerId) {
 
         let socialLinks = '';
         if (member.linkedin && member.email) {
+            // NOTE: Removed target="_blank" from the social link to match the user's request.
             socialLinks = `
                 <div class="flex justify-center space-x-3 mt-2">
-                    <a href="${member.linkedin}" target="_blank" class="text-gray-400 hover:text-blue-600">
+                    <a href="${member.linkedin}" class="text-gray-400 hover:text-blue-600">
                         <i data-feather="linkedin" class="w-5 h-5"></i>
                     </a>
                     <a href="mailto:${member.email}" class="text-gray-400 hover:text-blue-600">
@@ -266,6 +269,18 @@ function renderGallery() {
     feather.replace();
 }
 
+/**
+ * Global function to remove the target="_blank" attribute from all links.
+ * This is necessary to fix links defined in the HTML file (like Home, Research, Team, Publications)
+ * that may have been incorrectly set to open in a new tab.
+ */
+function fixNavigationLinks() {
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+        // Remove the target attribute completely, which defaults the link to open in the same window (_self)
+        link.removeAttribute('target');
+    });
+}
+
 
 // --- GLOBAL INITIALIZATION AND EVENT LISTENERS ---
 
@@ -280,6 +295,9 @@ document.addEventListener('DOMContentLoaded', function() {
     renderGallery();
 
     // --- Global Setup ---
+    
+    // FIX: Ensure all links open in the same window (Fixes the user's issue with nav links)
+    fixNavigationLinks();
 
     // Set current year in footer
     const currentYearEl = document.getElementById('current-year');
@@ -308,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function() {
              // Scroll back to the publications section top to see the change
              // Delay ensures content height calculation is done
              setTimeout(() => {
-                document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
+                 document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
              }, 50);
         });
     }
@@ -368,11 +386,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-
-
-
-
-
-
-
