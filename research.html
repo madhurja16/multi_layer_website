@@ -32,6 +32,15 @@
         #research-modal.hidden {
             display: none;
         }
+        
+        .clamp-text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 8; /* You can change this number (e.g., 6, 8, 10) */
+            -webkit-box-orient: vertical;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
@@ -78,50 +87,54 @@
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Research Area 1 -->
-                    <div class="research-card cursor-pointer bg-blue-50 border border-blue-200 p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg"
+                    <div class="research-card cursor-pointer bg-blue-50 border border-blue-200 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg overflow-hidden"
                          data-title="Acid-Catalysed Interfacial Reaction for Cellulose to Biofuel Production"
                          data-img="IMAGE/RESEARCH/jogesh.png"
-                         data-description="Our research focuses on understanding the acid-catalysed hydrolysis of cellulose at the water-solid interface using advanced multiscale modeling techniques. By combining quantum mechanics (QM) and molecular dynamics (MD), we aim to elucidate the reaction mechanisms, identify key intermediates, and design more efficient catalysts for converting biomass into valuable biofuels and chemicals. This work is crucial for developing sustainable energy sources.">
-                        <img src="IMAGE/RESEARCH/jogesh.png" alt="Acid-Catalysed Interfacial Reaction for Cellulose to Biofuel Production" class="w-full h-40 object-cover rounded-md mb-4 pointer-events-none">
-                        <div class="flex-grow">
+                         data-description="The conversion of cellulose, a major component of biomass, into biofuel is a promising path for sustainable energy production. However, this process faces significant challenges, particularly when conducted in aqueous solutions, which are essential for practical applications to reduce production costs. To address these challenges and improve reaction yields, various strategies have been developed over the years. One particularly effective approach is the use of biphasic media, which combine aqueous and non-aqueous phases. This biphasic system has been found to significantly enhance the efficiency of cellulose-based biofuel production. Our research will focus on investigating the properties of some of the interesting biphasic liquid media, with a specific emphasis on understanding their interfacial structure and its impact on chemical reactions relevant to cellulose-based biofuel production. The studies conducted are expected to provide valuable insights for optimizing the kinetics and selectivity of these reactions in a cost-effective manner. This will be achieved through the manipulation of the interfacial structure using appropriate additives.">
+                        <img src="IMAGE/RESEARCH/jogesh.png" alt="Acid-Catalysed Interfacial Reaction for Cellulose to Biofuel Production" class="w-full aspect-video object-cover pointer-events-none">
+                        <div class="p-8 flex-grow flex flex-col">
                             <h2 class="text-lg font-semibold mb-3">Acid-Catalysed Interfacial Reaction for Cellulose to Biofuel Production</h2>
-                            <p class="text-gray-600 text-sm">The conversion of cellulose, a major component of biomass, into biofuel is a promising path for sustainable energy production. However, this process faces significant challenges, particularly when conducted in aqueous solutions, which are essential for practical applications to reduce production costs. To address these challenges and improve reaction yields, various strategies have been developed over the years. 
+                            <p class="text-gray-600 text-sm clamp-text">The conversion of cellulose, a major component of biomass, into biofuel is a promising path for sustainable energy production. However, this process faces significant challenges, particularly when conducted in aqueous solutions, which are essential for practical applications to reduce production costs. To address these challenges and improve reaction yields, various strategies have been developed over the years. 
 One particularly effective approach is the use of biphasic media, which combine aqueous and non-aqueous phases. This biphasic system has been found to significantly enhance the efficiency of cellulose-based biofuel production. Our research will focus on investigating the properties of some of the interesting biphasic liquid media, with a specific emphasis on understanding their interfacial structure and its impact on chemical reactions relevant to cellulose-based biofuel production.
 The studies conducted are expected to provide valuable insights for optimizing the kinetics and selectivity of these reactions in a cost-effective manner. This will be achieved through the manipulation of the interfacial structure using appropriate additives.</p>
+                            <span class="text-blue-600 font-semibold text-sm mt-auto pt-2 inline-block">Read more...</span>
                         </div>
                     </div>
                     <!-- Research Area 2 -->
-                    <div class="research-card cursor-pointer bg-green-50 border border-green-200 p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg"
+                    <div class="research-card cursor-pointer bg-green-50 border border-green-200 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg overflow-hidden"
                          data-title="Exploring The Mechanism of Formation, Structure, and Properties of Electrode-Electrolyte Interface in Li-ion and Post Li-ion Batteries"
-                         data-img="https://placehold.co/400x250/D1FAE5/10B981?text=Battery+Interface"
-                         data-description="We investigate the complex electrochemical processes occurring at the electrode-electrolyte interface (EEI) in next-generation batteries. Using ab initio molecular dynamics and metadynamics, we simulate the formation of the solid-electrolyte interphase (SEI) layer, analyze its chemical composition and structural evolution, and correlate these properties with battery performance, stability, and safety. Our goal is to guide the rational design of better electrolytes and electrode materials for high-performance energy storage.">
-                        <img src="IMAGE/RESEARCH/jogesh.png" alt="Electrocatalysis" class="w-full h-40 object-cover rounded-md mb-4 pointer-events-none">
-                        <div class="flex-grow">
+                         data-img="IMAGE/RESEARCH/madhurja.png"
+                         data-description="The research is dedicated to addressing the critical challenge of energy storage in the face of rising energy consumption and dwindling fossil fuel reserves. Efficient energy storage emerges as a pivotal solution. Li-ion batteries (LIBs) have garnered widespread attention due to their exceptional energy and power densities, making them ideal for applications in portable electronic devices. However, to fully harness their potential in the electric vehicle (EV) industry, significant improvements in energy density, safety, and cost-effectiveness are essential. Consequently, this research is committed to advancing the field by focusing on the development of high-performance electrodes and electrolytes, guided by insights from atomistic simulations and free energy computations. The key objectives include the identification of suitable dopants to enhance the electrochemical performance and stability of existing cathode materials, analyzing the formation, structure, and properties of the electrode-electrolyte interface in Li and post-Li ion batteries to engineer improvements in their electrochemical performance and safety attributes, and developing electrolytes with superior stability and ion diffusion properties through insights from free energy computations and atomistic simulations. It aims to pave the way for more efficient and sustainable energy storage solutions.">
+                        <img src="IMAGE/RESEARCH/madhurja.png" alt="Electrocatalysis" class="w-full aspect-video object-cover pointer-events-none">
+                        <div class="p-8 flex-grow flex flex-col">
                             <h2 class="text-lg font-semibold mb-3">Exploring The Mechanism of Formation, Structure, and Properties of Electrode-Electrolyte Interface in Li-ion and Post Li-ion Batteries</h2>
-                            <p class="text-gray-600 text-sm">The research is dedicated to addressing the critical challenge of energy storage in the face of rising energy consumption and dwindling fossil fuel reserves. Efficient energy storage emerges as a pivotal solution. Li-ion batteries (LIBs) have garnered widespread attention due to their exceptional energy and power densities, making them ideal for applications in portable electronic devices. However, to fully harness their potential in the electric vehicle (EV) industry, significant improvements in energy density, safety, and cost-effectiveness are essential. Consequently, this research is committed to advancing the field by focusing on the development of high-performance electrodes and electrolytes, guided by insights from atomistic simulations and free energy computations. The key objectives include the identification of suitable dopants to enhance the electrochemical performance and stability of existing cathode materials, analyzing the formation, structure, and properties of the electrode-electrolyte interface in Li and post-Li ion batteries to engineer improvements in their electrochemical performance and safety attributes, and developing electrolytes with superior stability and ion diffusion properties through insights from free energy computations and atomistic simulations. It aims to pave the way for more efficient and sustainable energy storage solutions.</p>
+                            <p class="text-gray-600 text-sm clamp-text">The research is dedicated to addressing the critical challenge of energy storage in the face of rising energy consumption and dwindling fossil fuel reserves. Efficient energy storage emerges as a pivotal solution. Li-ion batteries (LIBs) have garnered widespread attention due to their exceptional energy and power densities, making them ideal for applications in portable electronic devices. However, to fully harness their potential in the electric vehicle (EV) industry, significant improvements in energy density, safety, and cost-effectiveness are essential. Consequently, this research is committed to advancing the field by focusing on the development of high-performance electrodes and electrolytes, guided by insights from atomistic simulations and free energy computations. The key objectives include the identification of suitable dopants to enhance the electrochemical performance and stability of existing cathode materials, analyzing the formation, structure, and properties of the electrode-electrolyte interface in Li and post-Li ion batteries to engineer improvements in their electrochemical performance and safety attributes, and developing electrolytes with superior stability and ion diffusion properties through insights from free energy computations and atomistic simulations. It aims to pave the way for more efficient and sustainable energy storage solutions.</p>
+                            <span class="text-blue-600 font-semibold text-sm mt-auto pt-2 inline-block">Read more...</span>
                         </div>
                     </div>
                     <!-- Research Area 3 -->
-                    <div class="research-card cursor-pointer bg-yellow-50 border border-yellow-200 p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg"
+                    <div class="research-card cursor-pointer bg-yellow-50 border border-yellow-200 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg overflow-hidden"
                          data-title="Machine Learning-Driven Enhancement of Transition Metal Sulfide Catalyst for Electrochemical Nitrogen Reduction Reaction (eNRR)"
-                         data-img="https://placehold.co/400x250/FEF3C7/F59E0B?text=eNRR+Catalyst"
-                         data-description="This project leverages machine learning (ML) to accelerate the discovery of novel catalysts for the electrochemical nitrogen reduction reaction (eNRR), a key process for sustainable ammonia synthesis. We develop and train ML models on large datasets from high-throughput density functional theory (DFT) calculations to predict catalytic activity, identify promising transition metal sulfide candidates, and uncover fundamental structure-activity relationships that govern the eNRR process.">
-                        <img src="IMAGE/RESEARCH/jogesh.png" alt="Surface Science" class="w-full h-40 object-cover rounded-md mb-4 pointer-events-none">
-                        <div class="flex-grow">
+                         data-img="IMAGE/RESEARCH/sudhin.png"
+                         data-description="The research area primarily focuses on catalysis, particularly in the context of the electrochemical nitrogen reduction reaction (eNRR). A significant facet of this research involves the development of catalysts, with a particular emphasis on transition metal sulphides. The objective is to design catalyst materials that exhibit robust performance in eNRR, ultimately contributing to the sustainable production of ammonia. One key aspect revolves around harnessing the capabilities of machine learning (ML) to guide and inform the rational design of these catalyst materials. Theoretical calculations such as density functional theory (DFT) are employed, providing insights into the intricate chemical processes at play. Ab initio molecular dynamics (AIMD) simulations, along with enhanced sampling techniques like metadynamics, are integral components of the research methodology, aiding in the exploration of catalytic activity, reaction kinetics, and thermodynamics. Through an interdisciplinary approach that combines chemistry, materials science, and data-driven techniques, we aim to develop catalysts that are not only highly effective but also environmentally sustainable, thereby contributing to the advancement of eco-friendly ammonia production.">
+                        <img src="IMAGE/RESEARCH/sudhin.png" alt="Surface Science" class="w-full aspect-video object-cover pointer-events-none">
+                        <div class="p-8 flex-grow flex flex-col">
                             <h2 class="text-lg font-semibold mb-3">Machine Learning-Driven Enhancement of Transition Metal Sulfide Catalyst for Electrochemical Nitrogen Reduction Reaction (eNRR)</h2>
-                            <p class="text-gray-600 text-sm">The research area primarily focuses on catalysis, particularly in the context of the electrochemical nitrogen reduction reaction (eNRR). A significant facet of this research involves the development of catalysts, with a particular emphasis on transition metal sulphides. The objective is to design catalyst materials that exhibit robust performance in eNRR, ultimately contributing to the sustainable production of ammonia. One key aspect revolves around harnessing the capabilities of machine learning (ML) to guide and inform the rational design of these catalyst materials. 
+                            <p class="text-gray-600 text-sm clamp-text">The research area primarily focuses on catalysis, particularly in the context of the electrochemical nitrogen reduction reaction (eNRR). A significant facet of this research involves the development of catalysts, with a particular emphasis on transition metal sulphides. The objective is to design catalyst materials that exhibit robust performance in eNRR, ultimately contributing to the sustainable production of ammonia. One key aspect revolves around harnessing the capabilities of machine learning (ML) to guide and inform the rational design of these catalyst materials. 
 Theoretical calculations such as density functional theory (DFT) are employed, providing insights into the intricate chemical processes at play. Ab initio molecular dynamics (AIMD) simulations, along with enhanced sampling techniques like metadynamics, are integral components of the research methodology, aiding in the exploration of catalytic activity, reaction kinetics, and thermodynamics. Through an interdisciplinary approach that combines chemistry, materials science, and data-driven techniques, we aim to develop catalysts that are not only highly effective but also environmentally sustainable, thereby contributing to the advancement of eco-friendly ammonia production.</p>
+                            <span class="text-blue-600 font-semibold text-sm mt-auto pt-2 inline-block">Read more...</span>
                         </div>
                     </div>
                     <!-- Research Area 4 -->
-                    <div class="research-card cursor-pointer bg-purple-50 border border-purple-200 p-8 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg"
+                    <div class="research-card cursor-pointer bg-purple-50 border border-purple-200 rounded-xl text-center transform hover:-translate-y-2 transition-transform duration-300 flex flex-col hover:shadow-xl shadow-lg overflow-hidden"
                          data-title="Confined Catalysis"
                          data-img="https://placehold.co/400x250/F3E8FF/8B5CF6?text=Confined+Catalysis"
                          data-description="We explore the principles of confined catalysis, where the reactivity and selectivity of chemical reactions are enhanced by enclosing catalysts within nanostructured environments like zeolites or metal-organic frameworks (MOFs). Our computational studies aim to understand how confinement affects molecular adsorption, transition state energies, and product distribution, providing insights for designing highly efficient and selective catalytic systems for a wide range of industrial applications.">
-                        <img src="https://placehold.co/400x250/F3E8FF/8B5CF6?text=Confined+Catalysis" alt="Materials Informatics" class="w-full h-40 object-cover rounded-md mb-4 pointer-events-none">
-                        <div class="flex-grow">
+                        <img src="https://placehold.co/400x250/F3E8FF/8B5CF6?text=Confined+Catalysis" alt="Materials Informatics" class="w-full aspect-video object-cover pointer-events-none">
+                        <div class="p-8 flex-grow flex flex-col">
                             <h2 class="text-lg font-semibold mb-3">Confined Catalysis</h2>
-                            <p class="text-gray-600 text-sm">Athira's Work.</p>
+                            <p class="text-gray-600 text-sm clamp-text">Athira's Work.</p>
+                            <span class="text-blue-600 font-semibold text-sm mt-auto pt-2 inline-block">Read more...</span>
                         </div>
                     </div>
                 </div>
@@ -213,7 +226,9 @@ Theoretical calculations such as density functional theory (DFT) are employed, p
             const openModal = (card) => {
                 modalImage.src = card.dataset.img;
                 modalTitle.textContent = card.dataset.title;
-                modalDescription.textContent = card.dataset.description;
+                // Use the full description from the data attribute for the modal
+                const fullDescription = card.getAttribute('data-description');
+                modalDescription.textContent = fullDescription;
                 researchModal.classList.remove('hidden');
                 setTimeout(() => {
                     modalContent.classList.remove('scale-95', 'opacity-0');
@@ -225,7 +240,7 @@ Theoretical calculations such as density functional theory (DFT) are employed, p
                 modalContent.classList.add('scale-95', 'opacity-0');
                 modalContent.classList.remove('scale-100', 'opacity-100');
                 setTimeout(() => {
-                     researchModal.classList.add('hidden');
+                        researchModal.classList.add('hidden');
                 }, 300); // match transition duration
             };
 
@@ -250,5 +265,3 @@ Theoretical calculations such as density functional theory (DFT) are employed, p
     </script>
 </body>
 </html>
-
-
