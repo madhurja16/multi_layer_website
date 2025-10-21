@@ -32,16 +32,16 @@
                 <div class="flex items-center space-x-3">
                     <!-- Placeholder for logo -->
                      <div class="h-12 w-12 rounded-md bg-blue-100 flex items-center justify-center text-xl font-bold text-blue-700">CCIC</div>
-                    <a href="#" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
+                    <a href="index.html" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-8" data-current-page="contact">
-                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
-                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Research</a>
-                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Team</a>
-                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Publications</a>
-                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">News</a>
-                    <a href="#" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Gallery</a>
-                    <a href="#" class="nav-link bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold">Join Us</a>
+                    <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
+                    <a href="research.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Research</a>
+                    <a href="team.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Team</a>
+                    <a href="publications.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Publications</a>
+                    <a href="news.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">News</a>
+                    <a href="gallery.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Gallery</a>
+                    <a href="contact.html" class="nav-link bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold">Join Us</a>
                 </nav>
                 <button id="mobile-menu-btn" class="md:hidden">
                     <i data-feather="menu" class="text-gray-700"></i>
@@ -49,13 +49,13 @@
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Home</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Research</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Team</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Publications</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">News</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Gallery</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Join Us</a>
+            <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Home</a>
+            <a href="research.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Research</a>
+            <a href="team.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Team</a>
+            <a href="publications.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Publications</a>
+            <a href="news.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">News</a>
+            <a href="gallery.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Gallery</a>
+            <a href="contact.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Join Us</a>
         </div>
     </header>
 
@@ -81,7 +81,7 @@
         <div class="container mx-auto px-6 text-center">
             <p>&copy; <span id="current-year"></span> Computational Catalysis and Interfacial Chemistry (CCIC). All Rights Reserved.</p>
             <p class="text-sm mt-2">Affiliated with the <a href="https://www.iitm.ac.in/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Indian Institute of Technology Madras</a></p>
-            <p class="text-sm mt-2">Designed by <a href="https://www.linkedin.com/in/mburagohain/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Madhurja Buragohain</a></p>
+            <p class="text-sm mt-2">This website is designed by <a href="https://www.linkedin.com/in/madhurja-buragohain/" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">Madhurja Buragohain</a></p>
         </div>
     </footer>
 
@@ -101,11 +101,35 @@
         // Specific script for contact.html to highlight the current page nav link
         document.addEventListener('DOMContentLoaded', () => {
             const nav = document.querySelector('nav[data-current-page="contact"]');
-            const joinUsLink = Array.from(nav.querySelectorAll('a')).pop(); // The last link is "Join Us"
+            const joinUsLink = nav.querySelector('a[href="contact.html"]');
             if(joinUsLink) {
-                 joinUsLink.classList.remove('bg-blue-600', 'text-white', 'hover:bg-blue-700');
-                 joinUsLink.classList.add('nav-link', 'active');
+                 joinUsLink.classList.remove('bg-blue-600', 'text-white', 'hover:bg-blue-700', 'nav-link');
+                 joinUsLink.classList.add('active', 'bg-blue-600', 'text-white', 'px-4', 'py-2', 'rounded-md');
             }
+
+            // More robust active link highlighting based on current page
+            const currentPage = 'contact.html'; // Set this for each page
+            const navLinks = document.querySelectorAll('nav .nav-link');
+            navLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                     if(link.textContent === 'Join Us') {
+                        link.classList.remove('text-gray-600', 'hover:text-blue-600', 'font-medium', 'transition-colors');
+                     }
+                } else if(link.textContent === 'Join Us') {
+                    // keep default style for join us if not active
+                }
+                else {
+                    link.classList.remove('active');
+                }
+            });
+
+             const mobileLinks = document.querySelectorAll('#mobile-menu a');
+              mobileLinks.forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('bg-gray-100', 'font-semibold');
+                }
+             });
         });
 
         // Shrink header on scroll
@@ -122,3 +146,4 @@
     </script>
 </body>
 </html>
+
