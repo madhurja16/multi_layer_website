@@ -60,7 +60,7 @@ const teamMembers = [
 
 const postdocAlumni = [
     { name: "Dr. Pragin", role: "Works at TCS", where: "Post Doc, 2024 (CCIC LAB)" }, 
-    { name: "Dr. XXX ", role: "Scientist at Shell", where: "PhD, 2023" }, 
+    { name: "Dr. Maiyel Vaganan ", role: "Postdoctoral Researcher", where: "PostDoc, 2025 (CCIC LAB)" }, 
 ];
 
 const mscAlumni = [
@@ -367,6 +367,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
 
