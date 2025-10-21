@@ -9,41 +9,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
-    <!-- FIX 1: Changed the broken '??' favicon to a functional microscope emoji (🔬) -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
     <link rel="stylesheet" href="style.css"> <!-- Linked common styles -->
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800" style="font-family: 'Inter', sans-serif;">
 
     <header id="header" class="bg-white/80 backdrop-blur-md shadow-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <!-- NOTE: Logo path is left as local, assuming it exists on your server. -->
                     <img src="IMAGE/LOGO/CCIC_logo.png" alt="CCIC Logo" class="h-12 w-auto rounded-md object-cover">
-                    <!-- FIX 2: Removed target="_blank" -->
                     <a href="index.html" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-8" data-current-page="team">
-                    <!-- FIX 2: Removed target="_blank" from all nav links -->
                     <a href="index.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
                     <a href="research.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Research</a>
-                    <a href="team.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Team</a>
+                    <a href="team.html" class="nav-link text-blue-600 font-semibold transition-colors border-b-2 border-blue-600 pb-1">Team</a>
                     <a href="publications.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Publications</a>
                     <a href="news.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">News</a>
                     <a href="gallery.html" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Gallery</a>
-                    <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold">Join Us</a>
+                    <a href="contact.html" class="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-all text-sm font-semibold shadow-md">Join Us</a>
                 </nav>
-                <button id="mobile-menu-btn" class="md:hidden">
+                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md hover:bg-gray-100">
                     <i data-feather="menu"></i>
                 </button>
             </div>
         </div>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <!-- FIX 2: Removed target="_blank" from all mobile links -->
             <a href="index.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Home</a>
             <a href="research.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Research</a>
-            <a href="team.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Team</a>
+            <a href="team.html" class="block py-3 px-6 text-blue-600 font-semibold bg-gray-50 mobile-link">Team</a>
             <a href="publications.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Publications</a>
             <a href="news.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">News</a>
             <a href="gallery.html" class="block py-3 px-6 text-gray-700 hover:bg-gray-100 mobile-link">Gallery</a>
@@ -56,50 +51,51 @@
         <section id="team" class="section bg-white py-20">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
-                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900">Meet the Team</h1>
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-gray-900">Meet the Team</h1>
                     <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Our group is composed of dedicated researchers and students passionate about advancing computational chemistry.</p>
                 </div>
                 
                 <div class="mb-16">
-                    <h3 class="text-2xl font-bold text-center mb-8">Researchers & Students</h3>
-                     <!-- PI included here for data rendering structure -->
-                    <div class="max-w-xl mx-auto bg-gray-50 rounded-lg p-6 flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-6 shadow-md mb-12">
-                        <!-- FIX 3: Replaced local image source with a placeholder URL for immediate visibility -->
-                        <img src="https://placehold.co/128x128/666/fff?text=SK" onerror="this.onerror=null;this.src='https://placehold.co/128x128/666/fff?text=SK';" alt="Dr. Sooraj Kunnikuruvan" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-md flex-shrink-0">
-                        <div>
-                            <h4 class="text-xl font-bold">Dr. Sooraj Kunnikuruvan</h4>
-                            <p class="text-blue-600">Principal Investigator, Assistant Professor</p>
-                            <div class="flex items-center space-x-4 mt-2">
-                                <!-- FIX 2: Removed target="_blank" -->
-                                <a href="https://www.linkedin.com/in/sooraj-kunnikuruvan-940657268/" class="text-gray-500 hover:text-blue-700">
-                                    <i data-feather="linkedin"></i>
+                    <h3 class="text-2xl font-bold text-center mb-10 text-gray-800 border-b pb-4">Principal Investigator</h3>
+                    <!-- PI Card -->
+                    <div class="max-w-xl mx-auto bg-white rounded-xl p-8 flex flex-col sm:flex-row items-center space-y-6 sm:space-y-0 sm:space-x-8 shadow-xl hover:shadow-2xl transition-shadow duration-300 border-t-4 border-blue-500">
+                        <img src="https://placehold.co/128x128/666/fff?text=SK" onerror="this.onerror=null;this.src='https://placehold.co/128x128/666/fff?text=SK';" alt="Dr. Sooraj Kunnikuruvan" class="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg flex-shrink-0">
+                        <div class="text-center sm:text-left">
+                            <h4 class="text-2xl font-bold text-gray-900">Dr. Sooraj Kunnikuruvan</h4>
+                            <p class="text-blue-600 font-medium">Principal Investigator, Assistant Professor</p>
+                            <div class="flex justify-center sm:justify-start items-center space-x-4 mt-3">
+                                <a href="https://www.linkedin.com/in/sooraj-kunnikuruvan-940657268/" class="text-gray-500 hover:text-blue-700 transition-colors">
+                                    <i data-feather="linkedin" class="w-5 h-5"></i>
                                 </a>
-                                <a href="mailto:soorajk@iitm.ac.in" class="text-gray-500 hover:text-blue-700">
-                                    <i data-feather="mail"></i>
+                                <a href="mailto:soorajk@iitm.ac.in" class="text-gray-500 hover:text-blue-700 transition-colors">
+                                    <i data-feather="mail" class="w-5 h-5"></i>
                                 </a>
                             </div>
-                            <!-- Shortened bio for better readability on a dedicated page -->
-                            <p class="text-gray-600 mt-2 text-sm">Dr. Kunnikuruvan's research focuses on chemical reactions at interfaces, energy storage, catalysis, and renewable energy production, employing DFT and ab initio molecular dynamics.</p>
+                            <p class="text-gray-600 mt-3 text-sm italic">Research focuses on chemical reactions at interfaces, energy storage, catalysis, and renewable energy production, employing DFT and ab initio molecular dynamics.</p>
                         </div>
                     </div>
-                    
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-center mb-10 text-gray-800 border-b pb-4">Current Researchers & Students</h3>
                     <div id="team-members-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
-                        <!-- Dynamic team member cards will be rendered here by script.js -->
+                        <!-- Dynamic team member cards will be rendered here -->
                     </div>
                 </div>
                 
-                <div>
-                    <h3 class="text-2xl font-bold text-center mb-8">Alumni</h3>
+                <div class="bg-gray-100 p-8 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-bold text-center mb-10 text-gray-800 border-b pb-4">Alumni</h3>
+                    
                     <div class="mb-12">
-                        <h4 class="text-xl font-semibold text-center text-gray-700 mb-6">Postdocs & PhD</h4>
+                        <h4 class="text-xl font-semibold text-center text-gray-700 mb-6">Postdocs & PhD Graduates</h4>
                         <div id="team-alumni-postdoc-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
-                            <!-- Dynamic alumni cards will be rendered here by script.js -->
+                            <!-- Dynamic postdoc alumni cards will be rendered here -->
                         </div>
                     </div>
                     <div>
-                        <h4 class="text-xl font-semibold text-center text-gray-700 mb-6">MSc Students</h4>
+                        <h4 class="text-xl font-semibold text-center text-gray-700 mb-6">MSc Graduates</h4>
                         <div id="team-alumni-msc-list" class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-8 gap-y-12">
-                            <!-- Dynamic alumni cards will be rendered here by script.js -->
+                            <!-- Dynamic MSc alumni cards will be rendered here -->
                         </div>
                     </div>
                 </div>
@@ -109,7 +105,7 @@
         <!-- Gallery Modal (Included for consistent script linking) -->
         <div id="gallery-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
             <div class="bg-white rounded-lg max-w-4xl max-h-full w-full h-auto p-4 relative">
-                <button id="modal-close-btn" class="absolute -top-4 -right-4 bg-white rounded-full p-2 z-10">
+                <button id="modal-close-btn" class="absolute -top-4 -right-4 bg-white rounded-full p-2 z-10 shadow-lg hover:bg-gray-100 transition-colors">
                     <i data-feather="x" class="text-gray-800"></i>
                 </button>
                 <img id="modal-image" src="" alt="Gallery image" class="w-full h-auto max-h-[80vh] object-contain rounded-md">
@@ -122,16 +118,16 @@
     <footer class="bg-gray-800 text-gray-300 py-8">
         <div class="container mx-auto px-6 text-center">
             <p>&copy; <span id="current-year"></span> Computational Catalysis and Interfacial Chemistry (CCIC). All Rights Reserved.</p>
-            <!-- FIX 2: Removed target="_blank" -->
             <p class="text-sm mt-2">Affiliated with the <a href="https://www.iitm.ac.in/" class="text-blue-400 hover:underline">Indian Institute of Technology Madras</a></p>
         </div>
     </footer>
 
-    <!-- Since script.js was not provided, I am embedding the necessary content 
-         from the previous response to ensure dynamic content loads correctly. -->
+    <!-- EMBEDDED JAVASCRIPT: Includes data and rendering logic with fixes -->
     <script type="text/javascript">
 // script.js (Embedded content for full functionality)
+
 // --- DATA ---
+// NOTE: Publications, News, and Gallery data are present here but are only used on their respective pages (not team.html).
 const publications = [
     { title: "Unraveling B, N Co-doping synergy in graphitic carbon nitride for efficient CO2 cycloaddition with styrene oxide",
       authors: "Hafila S Khairun, Gazala Parveen, Ripsa Rani Nayak, Jogeswar Chhatria, Sooraj Kunnikuruvan, Navneet Kumar Gupta", 
@@ -194,9 +190,9 @@ const postdocAlumni = [
     { name: "Dr. Maiyelvaganan ", role: "Postdoctoral Researcher", where: "PostDoc, 2025 (CCIC LAB)" } 
 ];
 
+// FIX: Removed the duplicate entry for Amiya Paul.
 const mscAlumni = [
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" }
+    { name: "Amiya Paul", role: "Phd at University of North Carolina at Chapel Hill", where: "MSc, 2024" }
 ];
 
 
@@ -240,6 +236,7 @@ const galleryImages = [
 
 
 // --- DYNAMIC CONTENT RENDERING FUNCTIONS (only run if the element exists) ---
+// (Functions for publications, news, gallery retained for completeness, though not used on this page)
 
 function renderPublications(limit) {
     const list = document.getElementById('publications-list');
@@ -296,11 +293,11 @@ function renderTeam(members, containerId) {
     list.innerHTML = '';
     members.forEach(member => {
         const card = document.createElement('div');
-        card.className = 'text-center';
+        card.className = 'text-center bg-white p-6 rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-shadow duration-300';
         const initials = member.name.split(' ').map(n => n[0]).join('');
         const imageUrl = member.imageUrl || `https://placehold.co/200x200/EBF4FF/3B82F6?text=${initials}`;
         
-        let description = `<p class="text-blue-600">${member.role}</p>`;
+        let description = `<p class="text-blue-600 font-medium">${member.role}</p>`;
         if (member.joiningDate) {
             description += `<p class="text-gray-500 text-sm mt-1">Joined: ${member.joiningDate}</p>`;
         }
@@ -308,22 +305,32 @@ function renderTeam(members, containerId) {
             description += `<p class="text-gray-500 text-sm mt-1">${member.where}</p>`;
         }
 
+        // IMPROVEMENT: Render social links if EITHER linkedin or email exists
         let socialLinks = '';
-        if (member.linkedin && member.email) {
-            socialLinks = `
-                <div class="flex justify-center space-x-3 mt-2">
-                    <a href="${member.linkedin}" class="text-gray-400 hover:text-blue-600">
+        if (member.linkedin || member.email) {
+            socialLinks = `<div class="flex justify-center space-x-3 mt-3">`;
+            
+            // Render LinkedIn if link is provided and is not the '#' placeholder
+            if (member.linkedin && member.linkedin !== '#') { 
+                socialLinks += `
+                    <a href="${member.linkedin}" class="text-gray-400 hover:text-blue-600 transition-colors">
                         <i data-feather="linkedin" class="w-5 h-5"></i>
-                    </a>
-                    <a href="mailto:${member.email}" class="text-gray-400 hover:text-blue-600">
+                    </a>`;
+            }
+            // Render Email if provided
+            if (member.email) {
+                socialLinks += `
+                    <a href="mailto:${member.email}" class="text-gray-400 hover:text-blue-600 transition-colors">
                         <i data-feather="mail" class="w-5 h-5"></i>
-                    </a>
-                </div>`;
+                    </a>`;
+            }
+            socialLinks += `</div>`;
         }
 
+
         card.innerHTML = `
-            <img src="${imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/200x200/EBF4FF/3B82F6?text=${initials}';" alt="${member.name}" class="w-40 h-40 mx-auto rounded-full object-cover mb-4 shadow-lg border-4 border-white">
-            <h4 class="font-bold text-lg">${member.name}</h4>
+            <img src="${imageUrl}" onerror="this.onerror=null;this.src='https://placehold.co/200x200/EBF4FF/3B82F6?text=${initials}';" alt="${member.name}" class="w-32 h-32 mx-auto rounded-full object-cover mb-4 shadow-xl border-4 border-white">
+            <h4 class="font-bold text-lg text-gray-900">${member.name}</h4>
             ${description}
             ${socialLinks}
         `;
@@ -339,7 +346,7 @@ function renderNews() {
     list.innerHTML = '';
     newsItems.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200';
+        card.className = 'bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200 hover:shadow-lg transition-shadow duration-300';
         card.innerHTML = `
             <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-48 object-cover">
             <div class="p-6">
@@ -389,8 +396,6 @@ function renderGallery() {
 
 /**
  * Global function to remove the target="_blank" attribute from all links.
- * This is technically redundant now that the HTML links are fixed, but kept 
- * for safety to catch dynamically generated links if they still include it.
  */
 function fixNavigationLinks() {
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
@@ -403,13 +408,12 @@ function fixNavigationLinks() {
 
 document.addEventListener('DOMContentLoaded', function() {
     // --- Data Rendering (Only works if the container IDs exist on the page) ---
-    renderPublications(4); 
+    renderPublications(4); // Only renders if publications-list is present
     renderTeam(teamMembers, 'team-members-list'); 
     renderTeam(postdocAlumni, 'team-alumni-postdoc-list'); 
     renderTeam(mscAlumni, 'team-alumni-msc-list'); 
-    // News and Gallery are not on team.html but the functions are harmless if containers don't exist
-    renderNews();
-    renderGallery();
+    renderNews(); // Only renders if news-list is present
+    renderGallery(); // Only renders if gallery-grid is present
 
     // --- Global Setup ---
     
@@ -433,20 +437,24 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    const mobileMenuCloseBtn = document.getElementById('mobile-menu-close-btn');
 
     mobileMenuBtn?.addEventListener('click', () => {
         mobileMenu?.classList.toggle('hidden');
-    });
-
-    mobileMenuCloseBtn?.addEventListener('click', () => {
-        mobileMenu?.classList.add('hidden');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (mobileMenu?.classList.contains('hidden')) {
+            icon.setAttribute('data-feather', 'menu');
+        } else {
+            icon.setAttribute('data-feather', 'x');
+        }
+        feather.replace();
     });
     
     // Close mobile menu on link click
     document.querySelectorAll('.mobile-link').forEach(link => {
         link.addEventListener('click', () => {
             mobileMenu?.classList.add('hidden');
+            document.getElementById('mobile-menu-btn').querySelector('i').setAttribute('data-feather', 'menu');
+            feather.replace();
         });
     });
 
