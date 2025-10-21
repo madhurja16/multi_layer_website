@@ -41,30 +41,34 @@ const publications = [
 
 const teamMembers = [
     { name: "Jogeshwar Chhatria", role: "PhD Student", joiningDate: "July 2022",
-      linkedin: "https://www.linkedin.com/in/jogeswar-chhatria-6538362b4/", email: "cy22d017@smail.iiitm.ac.in", imageUrl: "jogesh.jpg" }, 
+      linkedin: "https://www.linkedin.com/in/jogeswar-chhatria-6538362b4/", email: "cy22d017@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/jogesh.jpg" }, 
     { name: "Madhurja Buragohain", role: "PhD Student", joiningDate: "July 2022", linkedin: "https://www.linkedin.com/in/mburagohain/",
-      imageUrl: "madhurja.jpeg", email: "cy22d015@smail.iiitm.ac.in" }, 
-    { name: "Sudhin Rathnakumaran", role: "PhD Student", joiningDate: "July 2023",
-      linkedin: "https://www.linkedin.com/in/sudhin-r/", email: "cy23d024@smail.iitm.ac.in", imageUrl: "sudhin.jpg"}, 
-    { name: "Athira Jayasankar", role: "PhD Student", joiningDate: "July 2024",
-      linkedin: "https://www.linkedin.com/in/athira-jayasankar-867b46214/", email: "cy24d300@smail.iitm.ac.in", imageUrl: "athira.png"}, 
+      imageUrl: "IMAGE/PROFILE/madhurja.jpg", email: "cy22d015@smail.iiitm.ac.in" }, 
+    { name: "Sudhin R", role: "PhD Student", joiningDate: "July 2023",
+      linkedin: "https://www.linkedin.com/in/sudhin-r/", email: "cy23d024@smail.iitm.ac.in", imageUrl: "IMAGE/PROFILE/sudhin.jpg"}, 
+    { name: "Athira J", role: "PhD Student", joiningDate: "July 2024",
+      linkedin: "https://www.linkedin.com/in/athira-jayasankar-867b46214/", email: "cy24d300@smail.iitm.ac.in", imageUrl: "IMAGE/PROFILE/athira.jpg"}, 
     { name: "Anjana Vijayan", role: "PhD Student", joiningDate: "July 2025",
-      linkedin: "#", email: "X@smail.iiitm.ac.in", imageUrl: "anjana.png"}, 
+      linkedin: "#", email: "cy25d037@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/anjana.jpg"}, 
     { name: "Stuti Gupta", role: "Project Student", joiningDate: "July 2025",
-      linkedin: "https://www.linkedin.com/in/stuti-gupta-24285b215/", email: "guptastuti012@gmail.com", imageUrl: "stuti.jpg"}, 
+      linkedin: "https://www.linkedin.com/in/stuti-gupta-24285b215/", email: "guptastuti012@gmail.com", imageUrl: "IMAGE/PROFILE/stuti.jpg"}, 
     { name: "Ankan Kamila", role: "Masters Student", joiningDate: "July 2025",
-      linkedin: "#", email: "X@smail.iiitm.ac.in", imageUrl: "ankan.jpg"}, 
+      linkedin: "#", email: "cy24c013@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/ankan.jpg"}, 
     { name: "Himadri Mittal", role: "Masters Student", joiningDate: "July 2025",
-      linkedin: "#", email: "X@smail.iiitm.ac.in", imageUrl: "himadri.jpg"}
+      linkedin: "#", email: "cy24c033@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/himadri.jpg"}
 ];
 
 const postdocAlumni = [
     { name: "Dr. Pragin", role: "Works at TCS", where: "Post Doc, 2024 (CCIC LAB)" }, 
-    { name: "Dr. XXX ", role: "Scientist at Shell", where: "PhD, 2023" }, 
+    { name: "Dr. Maiyelvaganan ", role: "Postdoctoral Researcher", where: "PostDoc, 2025 (CCIC LAB)" } 
 ];
 
 const mscAlumni = [
-    { name: "XXXXX XXXXX", role: "Data Scientist at Google", where: "MSc, 2022" },
+    { name: "Soumya U K", role: "Phd at  TCG Crest, Kolkata", where: "MSc, 2023" },
+    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
+    { name: "Sankari NS", role: "Phd at  IIT Madsras", where: "MSc, 2024" },
+    { name: "Muskan", role: "Works at Pharma Company", where: "MSc, 2023" },
+    { name: "Nikitha S", role: "Phd at Ghent University, Belgium", where: "MSc, 2022" }
 ];
 
 
@@ -367,3 +371,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+
+
+
+
+
+
