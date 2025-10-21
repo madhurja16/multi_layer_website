@@ -1,9 +1,6 @@
 // script.js
 // --- DATA ---
 // All website content data is centralized here for easy updates across all pages.
-const publications = [
-
-];
 
 const teamMembers = [
     // Updated image paths to reliable placeholders to prevent the "question mark" icon
@@ -358,6 +355,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
 
