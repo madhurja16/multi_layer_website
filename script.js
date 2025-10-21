@@ -41,31 +41,30 @@ const publications = [
 
 const teamMembers = [
     { name: "Jogeshwar Chhatria", role: "PhD Student", joiningDate: "July 2022",
-      linkedin: "https://www.linkedin.com/in/jogeswar-chhatria-6538362b4/", email: "cy22d017@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/jogesh.jpg" }, 
+      linkedin: "https://www.linkedin.com/in/jogeswar-chhatria-6538362b4/", email: "cy22d017@smail.iiitm.ac.in", imageUrl: "jogesh.jpg" }, 
     { name: "Madhurja Buragohain", role: "PhD Student", joiningDate: "July 2022", linkedin: "https://www.linkedin.com/in/mburagohain/",
-      imageUrl: "IMAGE/PROFILE/madhurja.jpg", email: "cy22d015@smail.iiitm.ac.in" }, 
-    { name: "Sudhin R", role: "PhD Student", joiningDate: "July 2023",
-      linkedin: "https://www.linkedin.com/in/sudhin-r/", email: "cy23d024@smail.iitm.ac.in", imageUrl: "IMAGE/PROFILE/sudhin.jpg"}, 
-    { name: "Athira J", role: "PhD Student", joiningDate: "July 2024",
-      linkedin: "https://www.linkedin.com/in/athira-jayasankar-867b46214/", email: "cy24d300@smail.iitm.ac.in", imageUrl: "IMAGE/PROFILE/athira.jpg"}, 
+      imageUrl: "madhurja.jpeg", email: "cy22d015@smail.iiitm.ac.in" }, 
+    { name: "Sudhin Rathnakumaran", role: "PhD Student", joiningDate: "July 2023",
+      linkedin: "https://www.linkedin.com/in/sudhin-r/", email: "cy23d024@smail.iitm.ac.in", imageUrl: "sudhin.jpg"}, 
+    { name: "Athira Jayasankar", role: "PhD Student", joiningDate: "July 2024",
+      linkedin: "https://www.linkedin.com/in/athira-jayasankar-867b46214/", email: "cy24d300@smail.iitm.ac.in", imageUrl: "athira.png"}, 
     { name: "Anjana Vijayan", role: "PhD Student", joiningDate: "July 2025",
-      linkedin: "#", email: "cy25d037@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/anjana.jpg"}, 
+      linkedin: "#", email: "X@smail.iiitm.ac.in", imageUrl: "anjana.png"}, 
     { name: "Stuti Gupta", role: "Project Student", joiningDate: "July 2025",
-      linkedin: "https://www.linkedin.com/in/stuti-gupta-24285b215/", email: "guptastuti012@gmail.com", imageUrl: "IMAGE/PROFILE/stuti.jpg"}, 
+      linkedin: "https://www.linkedin.com/in/stuti-gupta-24285b215/", email: "guptastuti012@gmail.com", imageUrl: "stuti.jpg"}, 
     { name: "Ankan Kamila", role: "Masters Student", joiningDate: "July 2025",
-      linkedin: "#", email: "cy24c013@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/ankan.jpg"}, 
+      linkedin: "#", email: "X@smail.iiitm.ac.in", imageUrl: "ankan.jpg"}, 
     { name: "Himadri Mittal", role: "Masters Student", joiningDate: "July 2025",
-      linkedin: "#", email: "cy24c033@smail.iiitm.ac.in", imageUrl: "IMAGE/PROFILE/himadri.jpg"}
+      linkedin: "#", email: "X@smail.iiitm.ac.in", imageUrl: "himadri.jpg"}
 ];
 
 const postdocAlumni = [
     { name: "Dr. Pragin", role: "Works at TCS", where: "Post Doc, 2024 (CCIC LAB)" }, 
-    { name: "Dr. Maiyelvaganan ", role: "Postdoctoral Researcher", where: "PostDoc, 2025 (CCIC LAB)" } 
+    { name: "Dr. XXX ", role: "Scientist at Shell", where: "PhD, 2023" }, 
 ];
 
 const mscAlumni = [
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" },
-    { name: "Amiya Paul", role: "Phd at  University of North Carolina at Chapel Hill", where: "MSc, 2024" }
+    { name: "XXXXX XXXXX", role: "Data Scientist at Google", where: "MSc, 2022" },
 ];
 
 
@@ -153,12 +152,10 @@ function renderPublications(limit) {
                 <p class="text-gray-600 mt-1 text-sm">${p.authors}</p>
                 <p class="text-sm text-gray-500 mt-2"><em>${p.journal}</em>, ${p.year}</p>
                 ${p.link && p.link !== '#' ? `
-                <a href="${p.link}" class="inline-block mt-3 text-blue-600 font-semibold text-sm hover:underline">
+                <a href="${p.link}" target="_blank" class="inline-block mt-3 text-blue-600 font-semibold text-sm hover:underline">
                     Read Paper <span class="font-sans">&rarr;</span>
                 </a>` : ''}
             `;
-            // NOTE: Removed target="_blank" from the publication link to match the user's request.
-            // For external links, target="_blank" is generally preferred, but we adhere to the fix requested.
             pubsColumn.appendChild(item);
         });
         
@@ -189,10 +186,9 @@ function renderTeam(members, containerId) {
 
         let socialLinks = '';
         if (member.linkedin && member.email) {
-            // NOTE: Removed target="_blank" from the social link to match the user's request.
             socialLinks = `
                 <div class="flex justify-center space-x-3 mt-2">
-                    <a href="${member.linkedin}" class="text-gray-400 hover:text-blue-600">
+                    <a href="${member.linkedin}" target="_blank" class="text-gray-400 hover:text-blue-600">
                         <i data-feather="linkedin" class="w-5 h-5"></i>
                     </a>
                     <a href="mailto:${member.email}" class="text-gray-400 hover:text-blue-600">
@@ -269,18 +265,6 @@ function renderGallery() {
     feather.replace();
 }
 
-/**
- * Global function to remove the target="_blank" attribute from all links.
- * This is necessary to fix links defined in the HTML file (like Home, Research, Team, Publications)
- * that may have been incorrectly set to open in a new tab.
- */
-function fixNavigationLinks() {
-    document.querySelectorAll('a[target="_blank"]').forEach(link => {
-        // Remove the target attribute completely, which defaults the link to open in the same window (_self)
-        link.removeAttribute('target');
-    });
-}
-
 
 // --- GLOBAL INITIALIZATION AND EVENT LISTENERS ---
 
@@ -295,9 +279,6 @@ document.addEventListener('DOMContentLoaded', function() {
     renderGallery();
 
     // --- Global Setup ---
-    
-    // FIX: Ensure all links open in the same window (Fixes the user's issue with nav links)
-    fixNavigationLinks();
 
     // Set current year in footer
     const currentYearEl = document.getElementById('current-year');
@@ -326,7 +307,7 @@ document.addEventListener('DOMContentLoaded', function() {
              // Scroll back to the publications section top to see the change
              // Delay ensures content height calculation is done
              setTimeout(() => {
-                 document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('publications').scrollIntoView({ behavior: 'smooth' });
              }, 50);
         });
     }
