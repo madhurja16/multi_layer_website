@@ -2,41 +2,7 @@
 // --- DATA ---
 // All website content data is centralized here for easy updates across all pages.
 const publications = [
-    { title: "Unraveling B, N Co-doping synergy in graphitic carbon nitride for efficient CO2 cycloaddition with styrene oxide",
-      authors: "Hafila S Khairun, Gazala Parveen, Ripsa Rani Nayak, Jogeswar Chhatria, Sooraj Kunnikuruvan, Navneet Kumar Gupta", 
-      journal: "Journal of Catalysis",
-      year: "2025", 
-      link: "https://doi.org/10.1016/j.jcat.2025.116399" },
-    { title: "A Review on the Applications of “Catalysis Under 2D-Cover” for Small Molecule Activation",
-      authors: "Athira Jayasankar, Sooraj Kunnikuruvan",
-      journal: "Journal of the Indian Institute of Science",
-      year: "2025",
-      link: "https://doi.org/10.1007/s41745-025-00481-9" },
-    { title: "Molecular Mechanisms of Polymer Crosslinking via Thermal Activation",
-      authors: "Javed Akhtar, Jogeswar Chhatria, Sooraj Kunnikuruvan, Satyesh K Yadav, Tarak K Patra",
-      journal: "arXiv preprint arXiv:2507.21143", 
-      year: "2024", 
-      link: "https://arxiv.org/pdf/2507.21143" },
-    { title: "Orchestrating Multiple Aryl Rearrangements: Deciphering the Dynamics of Competitive Shifts and Shuttles on Four Carbons",
-      authors: "Nagaraju Ponugoti, Jogeswar Chhatria, Sooraj Kunnikuruvan, Parthasarathy Venkatakrishnan",
-      journal: "The Journal of Organic Chemistry",
-      year: "2025",
-      link: "https://doi.org/10.1021/acs.joc.5c00596" },
-    { title: "Machine Learning-accelerated Screening of Bimetallic Alloys for Oxygen Evolution Reaction",
-      authors: "Kumar, R., Sharma, A., Kunnikuruvan, S.",
-      journal: "Journal of Physical Chemistry Letters",
-      year: "2024",
-      link: "#" },
-    { title: "Self‐Healing, Ga‐Sb Alloy Confined Sn Anode for Stable Na‐Ion Storage in Glyme Based Electrolytes",
-      authors: "Dimpal Deori, Madhurja Buragohain, Youhyun Son, Sooraj Kunnikuruvan, Ashok Kumar Nanjundan, Philipp Adelhelm, Thangavelu Palaniselvam",
-      journal: "Small",
-      year: "2025",
-      link: "https://doi.org/10.1002/smll.202504185" },
-    { title: "Electrochemical Nitrate Reduction to Ammonia using γ-Fe2O3/BCN in a Neutral Medium",
-      authors: "Soniya Mariya Varghese, Anju Vakakuzhiyil Gopinathan, Sudhin Rathnakumaran, Suraj Sasikumar, Sooraj Kunnikuruvan, Ranga Rao Gangavarapu",
-      journal: "ACS Catalysis",
-      year: "2025",
-      link: "https://doi.org/10.1021/acscatal.5c00936" }
+
 ];
 
 const teamMembers = [
@@ -392,6 +358,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
 
 
 
