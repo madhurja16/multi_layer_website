@@ -128,9 +128,19 @@
         
         <!-- INTRO/Welcome Section -->
         <section class="section bg-white py-20">
-            <div class="container mx-auto px-6 text-center max-w-4xl">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Welcome to CCIC Lab at IIT Madras </h2>
-                <!-- ADDED text-justify CLASS HERE -->
+            <!--
+                MODIFICATION: The 'text-center' class was removed from the parent div below 
+                (was: <div class="container mx-auto px-6 text-center max-w-4xl">) to allow 
+                the body paragraph to fully 'justify' to the edges.
+            -->
+            <div class="container mx-auto px-6 max-w-4xl">
+                <!--
+                    MODIFICATION: The 'text-center' class was added directly to the h2
+                    (was: <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">)
+                    to ensure the short heading remains centered, as is standard practice for titles.
+                -->
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6 text-center">Welcome to CCIC Lab at IIT Madras </h2>
+                <!-- The paragraph text retains the 'text-justify' class to justify the long block of text. -->
                 <p class="text-lg text-gray-700 leading-relaxed text-justify">Welcome to the Computational Catalysis and Interfacial Chemistry (CCIC) research group led by Dr. Sooraj Kunnikuruvan.
                     Our group focuses on understanding and designing catalytic and interfacial processes through advanced computational techniques.
                     We investigate a wide range of chemical reactions-both homogeneous and heterogeneous-that occur at various interfaces,
@@ -154,7 +164,7 @@
         <!-- PRINCIPAL INVESTIGATOR Section (Updated with Stylish Cards) -->
         <section class="section bg-gray-50 py-16">
             <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Principal Investigator</h2>
+                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Principal Investigator </h2>
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                     
                     <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
@@ -162,9 +172,9 @@
                         <div class="flex-shrink-0">
                             <!-- Placeholder: Update the src attribute with the actual path to the PI's photo -->
                             <img src="IMAGE/PROFILE/soorajK.jpg" 
-                                 onerror="this.onerror=null;this.src='https://placehold.co/160x160/2563EB/fff?text=PI+Photo';" 
-                                 alt="Dr. Sooraj Kunnikuruvan" 
-                                 class="w-40 h-40 object-cover rounded-full border-4 border-blue-600 shadow-md mx-auto md:mx-0">
+                                    onerror="this.onerror=null;this.src='https://placehold.co/160x160/2563EB/fff?text=PI+Photo';" 
+                                    alt="Dr. Sooraj Kunnikuruvan" 
+                                    class="w-40 h-40 object-cover rounded-full border-4 border-blue-600 shadow-md mx-auto md:mx-0">
                         </div>
 
                         <!-- PI Info (Name/Title) -->
