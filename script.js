@@ -89,6 +89,14 @@ function renderPublications(limit) {
 
     list.innerHTML = ''; 
 
+    // NOTE: Publications data is missing from the provided script. 
+    // This function will not render anything unless a 'publications' array is defined.
+    // Assuming 'publications' array exists elsewhere or was omitted.
+    if (typeof publications === 'undefined' || !Array.isArray(publications)) {
+        console.warn('Publications data is missing. Skipping renderPublications.');
+        return;
+    }
+
     // Sort publications by year, most recent first
     const sortedPublications = [...publications].sort((a, b) => b.year - a.year);
     const itemsToShow = limit ? sortedPublications.slice(0, limit) : sortedPublications;
@@ -193,13 +201,33 @@ function renderNews() {
     list.innerHTML = '';
     newsItems.forEach(item => {
         const card = document.createElement('div');
-        card.className = 'bg-white rounded-lg shadow-sm overflow-hidden border border-gray-200';
+        // Add a class to identify it as a trigger and add hover effects
+        card.className = 'news-card-trigger bg-white rounded-lg shadow-md overflow-hidden flex flex-col cursor-pointer transition-all duration-300 hover:shadow-xl hover:transform hover:-translate-y-1';
+        
+        // Store all data needed for the modal in data attributes
+        card.dataset.title = item.title;
+        card.dataset.date = item.date;
+        card.dataset.excerpt = item.excerpt;
+        card.dataset.image = item.imageUrl;
+
         card.innerHTML = `
             <img src="${item.imageUrl}" alt="${item.title}" class="w-full h-48 object-cover">
-            <div class="p-6">
+            <!-- Added flex-grow to make the text content fill the space -->
+            <div class="p-6 flex flex-col flex-grow">
                 <p class="text-sm text-gray-500 mb-2">${item.date}</p>
                 <h3 class="font-bold text-lg mb-3">${item.title}</h3>
-                <p class="text-gray-600 text-sm">${item.excerpt}</p>
+                
+                <!-- This 'excerpt-container' will be styled with line-clamp in news.html -->
+                <div class="excerpt-container text-gray-600 text-sm mb-4 flex-grow">
+                    <p>${item.excerpt}</p>
+                </div>
+                
+                <!-- 'mt-auto' pushes the "Read More" link to the bottom of the card -->
+                <div class="mt-auto">
+                    <span class="text-blue-600 font-semibold text-sm hover:underline">
+                        Read More <span class="font-sans">&rarr;</span>
+                    </span>
+                </div>
             </div>
         `;
         list.appendChild(card);
@@ -219,7 +247,7 @@ function renderGallery() {
     galleryImages.forEach(img => {
         const item = document.createElement('div');
         item.className = 'aspect-w-1 aspect-h-1 cursor-pointer overflow-hidden rounded-lg group';
-        item.innerHTML = `<img src="${img.src}" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F59E0B/FFFFFF?text=Photo+Missing';" alt="${img.caption}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">`;
+        item.innerHTML = `<img src="${img.src}" onerror="this.onerror=null;this.src='httpsG://placehold.co/400x300/F59E0B/FFFFFF?text=Photo+Missing';" alt="${img.caption}" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-300">`;
         
         item.addEventListener('click', () => {
             modalImg.src = img.src;
@@ -359,4 +387,72 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // --- News Modal Logic ---
+    const newsList = document.getElementById('news-list');
+    const newsModal = document.getElementById('news-modal');
+    const newsModalCloseBtn = document.getElementById('news-modal-close-btn');
+    
+    // Modal content elements
+    const modalImg = document.getElementById('news-modal-image');
+    const modalDate = document.getElementById('news-modal-date');
+    const modalTitle = document.getElementById('news-modal-title');
+    const modalExcerpt = document.getElementById('news-modal-excerpt');
+    
+    const openNewsModal = (card) => {
+        if (!card || !newsModal) return;
+
+        // 1. Get data from the clicked card's dataset
+        const { title, date, excerpt, image } = card.dataset;
+
+        // 2. Populate the modal
+        modalImg.src = image;
+        modalImg.alt = title;
+        modalDate.textContent = date;
+        modalTitle.textContent = title;
+        // Handle multiline excerpts by splitting and wrapping in <p> tags
+        modalExcerpt.innerHTML = excerpt.split('\n').map(p => `<p>${p}</p>`).join('');
+
+        // 3. Show the modal with a fade-in effect
+        newsModal.classList.remove('hidden');
+        setTimeout(() => newsModal.classList.remove('opacity-0'), 10); // Start fade-in
+    };
+
+    const closeNewsModal = () => {
+        if (!newsModal) return;
+        
+        newsModal.classList.add('opacity-0');
+        setTimeout(() => newsModal.classList.add('hidden'), 300); // Hide after fade-out
+    };
+
+    // Event Delegation: Listen for clicks on the list itself
+    if (newsList) {
+        newsList.addEventListener('click', (e) => {
+            // Find the card trigger that was clicked
+            const cardTrigger = e.target.closest('.news-card-trigger');
+            if (cardTrigger) {
+                e.preventDefault();
+                openNewsModal(cardTrigger);
+            }
+        });
+    }
+
+    // Close modal listeners
+    if (newsModalCloseBtn) {
+        newsModalCloseBtn.addEventListener('click', closeNewsModal);
+    }
+    
+    if (newsModal) {
+        newsModal.addEventListener('click', (e) => {
+            // Check if the click is on the overlay (the modal itself)
+            // and not on the content wrapper
+            if (e.target === newsModal) {
+                closeNewsModal();
+            }
+        });
+    }
+    
+    // Also ensure Feather icons are replaced for the new modal close button
+    feather.replace();
 });
+
