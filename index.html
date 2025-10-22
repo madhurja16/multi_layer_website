@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
-    <link rel="stylesheet" href="style.css"> <!-- Linked common styles -->
-    <style>
+    <link rel="stylesheet" href="style.css"> <style>
         /* Keyframes for the image slideshow on the index page */
         @keyframes fadeEffect {
             0% { opacity: 0; transform: scale(1.05); }
@@ -42,7 +41,7 @@
         .slideshow-image:nth-child(4) { animation-delay: 15s; }
         .slideshow-image:nth-child(5) { animation-delay: 20s; }
         .slideshow-image:nth-child(6) { animation-delay: 25s; }
-          
+        
         /* Style for active navigation link */
         .nav-link.active {
             color: #2563EB; /* blue-600 */
@@ -76,7 +75,6 @@
                     <a href="index.html" target="_blank" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-8" data-current-page="home">
-                    <!-- Nav links now point to separate files/sections and open in a new window -->
                     <a href="index.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Home</a>
                     <a href="research.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Research</a>
                     <a href="team.html" target="_blank" class="nav-link text-gray-600 hover:text-blue-600 font-medium transition-colors">Team</a>
@@ -102,11 +100,9 @@
     </header>
 
     <main>
-        <!-- HOME Section (Full Screen Hero) -->
         <section id="home" class="section relative min-h-screen flex items-center justify-center text-white overflow-hidden">
             <div class="absolute top-0 left-0 w-full h-full z-0">
                 <div class="slideshow-container">
-                    <!-- Placeholder images (replace with actual files if available) -->
                     <img src="IMAGE/Slideshow/SlideShow_ANJANA.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Abstract+Model+1';" alt="Abstract molecular structure" class="slideshow-image">
                     <img src="IMAGE/Slideshow/SlideShow_MADHURJA.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Chemical+Lab';" alt="Chemical lab equipment" class="slideshow-image">
                     <img src="IMAGE/Slideshow/SlideShow_JOGESH.png" onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/000/fff?text=Scientist+Working';" alt="Scientist working in a lab" class="slideshow-image">
@@ -126,7 +122,6 @@
             </div>
         </section>
         
-        <!-- INTRO/Welcome Section -->
         <section class="section bg-white py-20">
             <div class="container mx-auto px-6 text-center max-w-4xl">
                 <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Welcome to CCIC Lab at IIT Madras </h2>
@@ -150,23 +145,19 @@
             </div>
         </section>
         
-        <!-- PRINCIPAL INVESTIGATOR Section (Updated with Stylish Cards) -->
         <section class="section bg-gray-50 py-16">
             <div class="container mx-auto px-6">
                 <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Principal Investigator</h2>
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-lg">
                     
                     <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
-                        <!-- PI Photo (Medium Size) -->
                         <div class="flex-shrink-0">
-                            <!-- Placeholder: Update the src attribute with the actual path to the PI's photo -->
                             <img src="IMAGE/PROFILE/soorajK.jpg" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/160x160/2563EB/fff?text=PI+Photo';" 
                                  alt="Dr. Sooraj Kunnikuruvan" 
                                  class="w-40 h-40 object-cover rounded-full border-4 border-blue-600 shadow-md mx-auto md:mx-0">
                         </div>
 
-                        <!-- PI Info (Name/Title) -->
                         <div class="flex-grow text-center md:text-left">
                             <h3 class="text-3xl font-bold text-gray-900">Dr. Sooraj Kunnikuruvan</h3>
                             <p class="text-lg text-blue-600 mb-6">Assistant Professor, Department of Chemistry</p>
@@ -176,29 +167,24 @@
                         </div>
                     </div>
                     
-                    <!-- NEW: Three stylish contact cards -->
                     <h4 class="text-2xl font-bold text-center text-gray-900 mt-8 mb-6 border-t pt-6">Principal Investigator Contact</h4>
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                         
-                        <!-- 1. Email Card (Blue) -->
                         <div class="bg-blue-50/70 p-4 rounded-xl border-2 border-blue-200 shadow-md hover:shadow-lg hover:shadow-blue-200 transition-shadow duration-300 flex flex-col items-center space-y-2">
                             <i data-feather="mail" class="w-8 h-8 text-blue-600"></i>
                             <span class="text-sm font-semibold text-gray-600">Email Address</span>
                             <a href="mailto:soorajk@iitm.ac.in" class="text-blue-800 font-bold text-lg truncate hover:text-blue-900 transition-colors">soorajk@iitm.ac.in</a>
                         </div>
 
-                        <!-- 2. Phone Card (Green) -->
                         <div class="bg-green-50/70 p-4 rounded-xl border-2 border-green-200 shadow-md hover:shadow-lg hover:shadow-green-200 transition-shadow duration-300 flex flex-col items-center space-y-2">
                             <i data-feather="phone" class="w-8 h-8 text-green-600"></i>
                             <span class="text-sm font-semibold text-gray-600">Phone</span>
                             <span class="text-green-800 font-bold text-lg">+91-44-2257-4245
                         </div>
 
-                        <!-- 3. Location Card (Slate/Gray) - Replaced CV -->
                         <div class="bg-slate-50/70 p-4 rounded-xl border-2 border-slate-200 shadow-md hover:shadow-lg hover:shadow-slate-200 transition-shadow duration-300 flex flex-col items-center space-y-2">
                             <i data-feather="map-pin" class="w-8 h-8 text-slate-600"></i>
                             <span class="text-sm font-semibold text-gray-600">Lab Location</span>
-                            <!-- Placeholder Google Maps link for IIT Madras -->
                             <a href="https://www.google.com/maps/place/Department+of+Chemistry/@12.9881348,80.2324006,21z/data=!4m10!1m2!2m1!1schemistry+department+iit+madras!3m6!1s0x3a525d8020b71665:0x94cb18c14f82268c!8m2!3d12.9881261!4d80.2325725!15sCh9jaGVtaXN0cnkgZGVwYXJ0bWVudCBpaXQgbWFkcmFzkgEVdW5pdmVyc2l0eV9kZXBhcnRtZW50qgFTCgkvbS8wZ3l4d2QQATIfEAEiG7adv6xgP-jLWrkfNa6NEFSJ2mxAhOLdItjFLjIjEAIiH2NoZW1pc3RyeSBkZXBhcnRtZW50IGlpdCBtYWRyYXPgAQA!16s%2Fg%2F1hm3vdcwb?entry=ttu&g_ep=EgoyMDI1MTAxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="text-slate-800 font-bold text-lg hover:text-slate-900 transition-colors">View on Google Maps</a>
                         </div>
                     </div>
@@ -210,12 +196,11 @@
 
     <footer class="bg-gray-800 text-gray-300 py-8">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; <span id="current-year"></span> Computational Catalysis and Interfacial Chemistry (CCIC). All Rights Reserved.</p>
+            <p>© <span id="current-year"></span> Computational Catalysis and Interfacial Chemistry (CCIC). All Rights Reserved.</p>
             <p class="text-sm mt-2">Affiliated with the <a href="https://www.iitm.ac.in/" target="_blank" class="text-blue-400 hover:underline">Indian Institute of Technology Madras</a></p>
         </div>
     </footer>
 
-    <!-- Gallery Modal (Included for consistent script linking) -->
     <div id="gallery-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4">
         <div class="bg-white rounded-lg max-w-4xl max-h-full w-full h-auto p-4 relative">
             <button id="modal-close-btn" class="absolute -top-4 -right-4 bg-white rounded-full p-2 z-10">
@@ -233,43 +218,31 @@
              const nav = document.querySelector('nav[data-current-page="home"]');
              nav.querySelector('a[href="index.html"]').classList.add('active');
              
-             // Initialize feather icons for the new section
+             // Initialize feather icons (This is OK to run again, just in case)
              feather.replace();
 
-             // Set current year in footer
+             // Set current year in footer (This is also OK to run again)
              document.getElementById('current-year').textContent = new Date().getFullYear();
              
-             // Mobile menu toggle logic
-             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-             const mobileMenu = document.getElementById('mobile-menu');
-             const menuIcon = mobileMenuBtn.querySelector('i');
-
-             mobileMenuBtn.addEventListener('click', () => {
-                 const isHidden = mobileMenu.classList.toggle('hidden');
-                 menuIcon.setAttribute('data-feather', isHidden ? 'menu' : 'x');
-                 feather.replace();
-             });
+             // --- FIXED ---
+             // The mobile menu toggle logic has been REMOVED from this file.
+             // It is now handled only by the global 'script.js' file,
+             // which prevents the "double-toggle" bug.
 
              // Simple slideshow logic (if script.js is not present)
              let slideIndex = 0;
              function showSlides() {
                  let slides = document.getElementsByClassName("slideshow-image");
                  for (let i = 0; i < slides.length; i++) {
-                     // Note: We are relying on CSS animations for smooth transitions, but keeping this function for basic visibility if needed.
-                     // The CSS animation handles the fading and staggering perfectly.
+                     // Note: We are relying on CSS animations for smooth transitions...
                  }
              }
              showSlides();
         });
 
-        // Basic placeholder for script.js functionality (since it was referenced)
-        // Set current year in footer
-        document.addEventListener('DOMContentLoaded', () => {
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        });
+        // --- FIXED ---
+        // Removed the redundant second DOMContentLoaded listener
+        // that was also setting the current year.
     </script>
 </body>
 </html>
-
-
-
