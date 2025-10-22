@@ -11,6 +11,31 @@
     <script src="https://unpkg.com/feather-icons"></script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔬</text></svg>">
     <link rel="stylesheet" href="style.css"> <!-- Linked common styles -->
+
+    <!-- Styles for news card truncation and the new modal -->
+    <style>
+      /* Style for the truncated excerpt on the card */
+      div#news-list .excerpt-container p {
+          /* Truncate text to 3 lines */
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3; /* Limit to 3 lines */
+          overflow: hidden;
+          text-overflow: ellipsis;
+      }
+
+      /* Styles for the news modal */
+      #news-modal {
+          /* Added for fade-in/out transition */
+          transition: opacity 0.3s ease;
+      }
+      
+      #news-modal-content {
+          /* Make the modal content area scrollable if it's too tall */
+          max-height: 90vh;
+          overflow-y: auto;
+      }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -18,7 +43,7 @@
         <div class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-3">
-                    <img src="IMAGE/LOGO/CCIC_logo.png" alt="CCIC Logo" class="h-12 w-auto rounded-md object-cover">
+                    <img src="IMAGE/LOGO/CCIC_logo.png" alt="CCIC Logo" class="h-12 w-auto rounded-md object-cover" onerror="this.style.display='none'; this.src='https://placehold.co/100x100/e2e8f0/64748b?text=CCIC&font=inter';">
                     <a href="index.html" class="text-xl font-bold text-gray-900">CCIC@IITM</a>
                 </div>
                 <nav class="hidden md:flex items-center space-x-8" data-current-page="news">
@@ -70,6 +95,30 @@
                 <p id="modal-caption" class="text-center text-gray-700 mt-4"></p>
             </div>
         </div>
+
+        <!-- News Modal -->
+        <div id="news-modal" class="hidden fixed inset-0 bg-black/80 z-[100] flex items-center justify-center p-4 opacity-0">
+            <!-- Modal wrapper for content and centering -->
+            <div class="bg-white rounded-lg max-w-3xl w-full relative" id="news-modal-content-wrapper">
+                <!-- Close Button -->
+                <button id="news-modal-close-btn" class="absolute -top-3 -right-3 bg-white rounded-full p-2 z-10 shadow-lg transition-transform hover:scale-110">
+                    <i data-feather="x" class="text-gray-800"></i>
+                </button>
+                
+                <!-- Scrollable Content Area -->
+                <div id="news-modal-content" class="rounded-lg overflow-hidden">
+                    <img id="news-modal-image" src="" alt="News image" class="w-full h-64 object-cover">
+                    <div class="p-6 md:p-8">
+                        <p id="news-modal-date" class="text-sm text-gray-500 mb-2"></p>
+                        <h2 id="news-modal-title" class="text-2xl font-bold text-gray-900 mb-4"></h2>
+                        <!-- Full excerpt text will be injected here -->
+                        <div id="news-modal-excerpt" class="text-gray-700 space-y-4">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </main>
 
     <footer class="bg-gray-800 text-gray-300 py-8">
@@ -84,24 +133,24 @@
         // Specific script for news.html to highlight the current page
         document.addEventListener('DOMContentLoaded', () => {
              const nav = document.querySelector('nav[data-current-page="news"]');
-             nav.querySelector('a[href="news.html"]').classList.add('active');
-             // Manually run renderNews() since it only runs if the element exists and we need it to run here
-             // NOTE: renderNews is now called from script.js's DOMContentLoaded listener, but we keep this here 
-             // in case the script loading order changes or to ensure the DOM-dependent logic runs.
+             if (nav) {
+                const link = nav.querySelector('a[href="news.html"]');
+                if (link) {
+                    link.classList.add('active');
+                }
+             }
+             
+             // Highlight mobile link
+             const mobileNav = document.querySelector('#mobile-menu');
+             if (mobileNav) {
+                const mobileLink = mobileNav.querySelector('a[href="news.html"]');
+                if (mobileLink) {
+                    mobileLink.classList.add('active', 'bg-gray-100');
+                }
+             }
         });
-        
-        // Manual call for renderNews remains necessary if the script.js DOMContentLoaded listener is structured 
-        // to only run global setup and not page-specific rendering (which is the case in the user's script structure).
-        // Since I'm fixing script.js to make it available, the error will resolve, but the manual call 
-        // in script.js's GLOBAL block handles it. Let's remove the manual call here 
-        // and ensure script.js's global block handles it correctly.
-        // Wait, the error is *in* the DOMContentLoaded, so I must remove the manual call in this file.
-        // The fix is actually in script.js (not shown to the user yet). 
-        
-        // I need to update script.js to move renderNews function definition outside of the DOMContentLoaded 
-        // block, and then I will update news.html to use the script.js's global setup.
-        
-        // Reverting the comment changes above, as the critical fix is in script.js which I must provide.
+
     </script>
 </body>
 </html>
+
