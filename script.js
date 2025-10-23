@@ -48,7 +48,7 @@ const newsItems = [
     { title: "Mr. Madhurja recieves best oral presentation award",
       date: "Sepetember 8, 2025",
       excerpt: " We are proud to share that Madhurjya Buragohain received the Best Oral Presentation Award at the Chemistry In-House Symposium (CiHS)-2025, organized by the Department of Chemistry, IIT Madras.  Congratulations from the entire CCIC Lab on this achievement!", 
-      imageUrl: "https://placehold.co/400x250/3B82F6/FFFFFF?text= Best Oral Presentation Award" },
+      imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQHNvXkunRhQEA/feedshare-shrink_1280/B56ZkvLm_RHAAs-/0/1757433202892?e=1762992000&v=beta&t=r83fAYifUMr5Z5YMeXphfoJCeLNA6UA3Pkqd8q1fdP0" },
     { title: "Mr. Sudhin R recieves best poster award",
       date: "August 28, 2025",
       excerpt: "We are delighted to share that Sudhin R. from our CCIC lab has been awarded the Best Poster Award at the National Symposium on Electrochemical Science and Technology (NSEST-2025), held during 28–29 August 2025.The symposium, jointly organized by the Electrochemical Society of India, Indian Institute of Science (Bengaluru), SRM Institute of Science and Technology (Kattankulathur), and Indian Institute of Technology Madras.Congratulations, Sudhin! Wishing you many more milestones and successes in your research journey.", 
@@ -455,5 +455,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // Also ensure Feather icons are replaced for the new modal close button
     feather.replace();
 });
+
 
 
