@@ -46,7 +46,7 @@ const newsItems = [
     { title: "Madhurja’s Latest Paper Publication",
       date: "October 16, 2025",
       excerpt: "We're happy to share our new article on solid electrolyte interphase (SEI) formation in Li metal batteries, published in ACS Applied Energy Materials.", 
-      imageUrl: "https://placehold.co/400x250/3B82F6/FFFFFF?text=New Paper Published" },
+      imageUrl: "https://pubs.acs.org/cms/10.1021/acsaem.5c02340/asset/images/medium/ae5c02340_0009.gif" },
     { title: "Mr. Madhurja recieves best oral presentation award",
       date: "Sepetember 8, 2025",
       excerpt: " We are proud to share that Madhurjya Buragohain received the Best Oral Presentation Award at the Chemistry In-House Symposium (CiHS)-2025, organized by the Department of Chemistry, IIT Madras.  Congratulations from the entire CCIC Lab on this achievement!", 
@@ -457,6 +457,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Also ensure Feather icons are replaced for the new modal close button
     feather.replace();
 });
+
 
 
 
