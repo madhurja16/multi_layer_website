@@ -52,7 +52,7 @@ const newsItems = [
     { title: "Mr. Sudhin R recieves best poster award",
       date: "August 28, 2025",
       excerpt: "We are delighted to share that Sudhin R. from our CCIC lab has been awarded the Best Poster Award at the National Symposium on Electrochemical Science and Technology (NSEST-2025), held during 28–29 August 2025.The symposium, jointly organized by the Electrochemical Society of India, Indian Institute of Science (Bengaluru), SRM Institute of Science and Technology (Kattankulathur), and Indian Institute of Technology Madras.Congratulations, Sudhin! Wishing you many more milestones and successes in your research journey.", 
-      imageUrl: "https://placehold.co/400x250/3B82F6/FFFFFF?text=Best Poster Award" },
+      imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQHh6w4E_zQbfw/feedshare-shrink_800/B56ZkPgRKYG4Ak-/0/1756901744882?e=1762992000&v=beta&t=HjjZJY9-lxE2bjNGcKdrpsey8vRTmzJjhPZlsHazZWM" },
     { title: "CCIC welcomes new PhD students",
       date: "August 1, 2025", 
       excerpt: "We are excited to welcome Anjana Vijayan to the lab. She will be working on solid-electrolyte.", 
@@ -60,11 +60,11 @@ const newsItems = [
     { title: "Ms. Stuti awarded the prestigious Prof. V. Ramamurthy Endowment Award for Best MSc Thesis.",
       date: "August 17, 2025", 
       excerpt: "We’re delighted to share that STUTI GUPTA, an MSc student from our lab, has officially graduated. She has been awarded the prestigious Prof. V. Ramamurthy Endowment Award for Best MSc Thesis. Wishing her all the very best for the exciting paths to come! ", 
-      imageUrl: "https://placehold.co/600x375/10B981/FFFFFF?text=Prof. V. Ramamurthy Endowment Award&font_size=80" },
+      imageUrl: "https://media.licdn.com/dms/image/v2/D4D22AQEOQACqZH_iUg/feedshare-shrink_800/B4DZgXFofgGsAg-/0/1752734011582?e=1762992000&v=beta&t=WqXHvqZPvyeqHuxHf8YNwwOqjxQT9vfsGWH2D96oZQ0" },
     { title: "Mr. Jogesh recieves best poster award",
       date: "November 6, 2024", 
       excerpt: "A big congratulations to our lab member Jogeswar Chhatria, who has been awarded the Best Poster in Theoretical Chemistry at the Chemistry In-House Symposium 2024 conducted by Department of Chemistry, Indian Institute of Technology, Madras.", 
-      imageUrl: "https://placehold.co/400x250/F59E0B/FFFFFF?text=Best Poster Award" }
+      imageUrl: "https://media.licdn.com/dms/image/v2/D5622AQFsTpi-yk5J4g/feedshare-shrink_800/feedshare-shrink_800/0/1730884396137?e=1762992000&v=beta&t=Kh6PMJ3rd7N-4lbIXIvmdpw6tOENiAxVDaXUzLQINxc" }
 ];
     
 const galleryImages = [
@@ -455,6 +455,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Also ensure Feather icons are replaced for the new modal close button
     feather.replace();
 });
+
 
 
 
